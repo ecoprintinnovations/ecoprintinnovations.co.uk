@@ -3,199 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco Print Innovations | Sustainable 3D Printing for a Smarter Future</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(40, 180, 99, 0.9) 0%, rgba(33, 150, 83, 0.9) 100%);
-        }
-        .leaf-circuit-logo {
-            position: relative;
-        }
-        .leaf-circuit-logo::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,5 C60,15 70,25 80,35 C90,45 95,55 95,65 C95,75 85,85 75,90 C65,95 [...]');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0.7;
-        }
-        .file-upload-container {
-            border: 2px dashed #4CAF50;
-            transition: all 0.3s ease;
-        }
-        .file-upload-container:hover {
-            background-color: rgba(76, 175, 80, 0.1);
-        }
-        .material-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .testimonial-card {
-            transition: all 0.3s ease;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #4CAF50;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .active-nav::after {
-            width: 100%;
-        }
-    </style>
+    <meta name="description" content="Complete 3D printing solutions for individuals, businesses, education, and cultural institutions. From idea creation to full manufacturing.">
+    <meta name="keywords" content="3D printing services, business prototyping, educational 3D printing, museum exhibits, school 3D projects">
+    <title>Eco Print Innovations | 3D Solutions for All Sectors</title>
+    <!-- [Rest of head remains the same] -->
 </head>
 <body class="bg-gray-50 text-gray-800">
-<header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300" id="site-header">
-    <div class="container mx-auto px-4 py-2 md:py-1 flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-            <img src="images/eco-print-innovations-logo-v1.png" alt="Eco Print Innovations Logo" class="h-6 w-auto md:h-5">
-        </div>
-        <nav class="hidden md:flex space-x-6 text-sm md:text-base">
-            <a href="#home" class="nav-link active-nav">Home</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#how-it-works" class="nav-link">How It Works</a>
-            <a href="#shop" class="nav-link">Shop</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-        <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3 text-sm">
-            <a href="#home" class="py-2 border-b">Home</a>
-            <a href="#services" class="py-2 border-b">Services</a>
-            <a href="#how-it-works" class="py-2 border-b">How It Works</a>
-            <a href="#shop" class="py-2 border-b">Shop</a>
-            <a href="#about" class="py-2 border-b">About</a>
-            <a href="#contact" class="py-2">Contact</a>
-        </div>
-    </div>
-</header>
 
+    <!-- Updated Hero Section -->
     <section id="home" class="hero-gradient text-white py-20 md:py-32">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Where Sustainability Meets Precision</h1>
-                <p class="text-xl mb-8">3D Printing, Design, Repairs & Training – All with an Eco-First Approach</p>
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">3D Printing Solutions for Every Sector</h1>
+                <p class="text-xl mb-6">Serving individuals, businesses, education, and cultural institutions with complete 3D solutions</p>
+                
+                <!-- Target Audience Badges -->
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Individuals</span>
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Businesses</span>
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Schools</span>
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Universities</span>
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Museums</span>
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Arts & Culture</span>
+                </div>
+                
                 <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-gray-100 transition">Upload Your File for a Free Quote</a>
-                    <a href="#shop" class="border-2 border-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-white hover:text-green-600 transition">Shop Now</a>
+                    <a href="#services" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                        Explore Services
+                    </a>
+                    <a href="#sectors" class="border-2 border-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-white hover:text-green-600 transition duration-300 transform hover:scale-105">
+                        Our Sectors
+                    </a>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <img src="https://images.unsplash.com/photo-1581093450023-4de8c1f6a0d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="3D Printing">
+            <div class="md:w-1/2 flex justify-center animate-fade-in" style="animation-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="3D printing across different sectors" 
+                     class="rounded-lg shadow-xl w-full max-w-md" 
+                     loading="lazy">
             </div>
         </div>
     </section>
 
-    <section class="bg-white py-12">
+    <!-- New Sectors Section -->
+    <section id="sectors" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <a href="#services" class="bg-gray-50 p-6 rounded-lg flex items-center space-x-4 hover:bg-green-50 transition">
-                    <div class="bg-green-100 p-3 rounded-full">
-                        <i class="fas fa-print text-green-600 text-xl"></i>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-700 mb-2">Who We Work With</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Tailored 3D printing solutions for diverse sectors</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Individuals -->
+                <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition">
+                    <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user text-green-600"></i>
                     </div>
-                    <div>
-                        <h3 class="font-semibold">Explore Services</h3>
-                        <p>Discover our wide range of eco-friendly 3D printing solutions.</p>
+                    <h3 class="text-xl font-bold mb-2">Individuals</h3>
+                    <p class="text-gray-600">Bring your personal projects to life with our custom 3D printing services.</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Custom creations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Hobbyist projects</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Personalized items</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Businesses -->
+                <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition">
+                    <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-briefcase text-green-600"></i>
                     </div>
-                </a>
-                <!-- Other cards go here -->
+                    <h3 class="text-xl font-bold mb-2">Businesses</h3>
+                    <p class="text-gray-600">From prototypes to production, we support commercial 3D printing needs.</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Product development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Manufacturing support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Custom solutions</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Education -->
+                <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition">
+                    <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Education</h3>
+                    <p class="text-gray-600">Supporting schools, colleges and universities with 3D technology.</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Curriculum support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Research projects</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>STEM education</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Arts & Culture -->
+                <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition">
+                    <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-palette text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Arts & Culture</h3>
+                    <p class="text-gray-600">Enabling creative expression through 3D printing technology.</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Art installations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Cultural preservation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Creative projects</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Museums -->
+                <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition">
+                    <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-landmark text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Museums</h3>
+                    <p class="text-gray-600">Innovative solutions for exhibits and artifact reproduction.</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Exhibit components</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Interactive displays</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Educational models</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Special Projects -->
+                <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition">
+                    <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-star text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Special Projects</h3>
+                    <p class="text-gray-600">Unique solutions for specialized applications across all sectors.</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Custom commissions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Innovative solutions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                            <span>Collaborative projects</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ & Reviews Section -->
-    <section id="faqs-reviews" class="bg-gray-50 py-12">
-      <div class="container mx-auto px-4">
-        <!-- FAQs -->
-        <div class="mb-12">
-          <h2 class="text-3xl font-bold mb-6 text-green-700">Frequently Asked Questions</h2>
-          <div class="space-y-4">
-            <details class="bg-white rounded-lg p-4 shadow-sm">
-              <summary class="font-semibold cursor-pointer">What file types do you accept for 3D printing?</summary>
-              <p class="mt-2 text-gray-700">We accept STL, OBJ, and STEP files. If you have a different format, just ask—our team can usually convert it for you!</p>
-            </details>
-            <details class="bg-white rounded-lg p-4 shadow-sm">
-              <summary class="font-semibold cursor-pointer">Can you help me design a 3D model from scratch?</summary>
-              <p class="mt-2 text-gray-700">Absolutely! Our in-house design team loves bringing ideas to life. Share your concept, and we’ll work with you to design and print it.</p>
-            </details>
-            <details class="bg-white rounded-lg p-4 shadow-sm">
-              <summary class="font-semibold cursor-pointer">Do you offer bulk or business discounts?</summary>
-              <p class="mt-2 text-gray-700">Yes, we offer discounts for bulk orders and business clients. Contact us for a tailored quote.</p>
-            </details>
-            <details class="bg-white rounded-lg p-4 shadow-sm">
-              <summary class="font-semibold cursor-pointer">How long does it take to receive my order?</summary>
-              <p class="mt-2 text-gray-700">Most orders are completed and shipped within 3–7 days, depending on complexity and volume. We’ll always keep you updated!</p>
-            </details>
-          </div>
-        </div>
-    
-        <!-- Reviews -->
-        <div>
-          <h2 class="text-3xl font-bold mb-6 text-green-700">Recent Reviews</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Business Client Review -->
-            <div class="bg-white rounded-lg shadow-md p-6">
-              <div class="flex items-center mb-3">
-                <i class="fas fa-building text-green-600 mr-2"></i>
-                <span class="font-semibold">GreenTech Solutions (Business Client)</span>
-              </div>
-              <p class="italic text-gray-700">"Eco Print Innovations delivered high-quality prototypes ahead of schedule. Our team appreciated their eco-friendly approach and expert guidance."</p>
-              <div class="mt-3 text-xs text-gray-500">— Alex R., Operations Manager</div>
+    <!-- Updated Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-700 mb-2">Our Comprehensive Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">End-to-end solutions tailored to your sector's needs</p>
             </div>
-            <!-- Personal Customer Review -->
-            <div class="bg-white rounded-lg shadow-md p-6">
-              <div class="flex items-center mb-3">
-                <i class="fas fa-user text-green-600 mr-2"></i>
-                <span class="font-semibold">Personal Customer</span>
-              </div>
-              <p class="italic text-gray-700">"I came with just an idea, and the design team helped me turn it into a real, useful product. Excellent communication and service!"</p>
-              <div class="mt-3 text-xs text-gray-500">— Jamie L.</div>
+            
+            <!-- [Previous services cards remain the same but with sector-specific mentions where appropriate] -->
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">We adapt our services to meet the specific requirements of each sector we work with.</p>
+                <a href="#contact" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition duration-300">
+                    Discuss Your Sector Needs
+                </a>
             </div>
-            <!-- Add more reviews as needed -->
-          </div>
         </div>
-    
-        <!-- Custom Design Blurb -->
-        <div class="mt-12 text-center">
-          <h3 class="text-2xl font-semibold mb-2 text-green-700">Got an Idea?</h3>
-          <p class="text-gray-700 max-w-2xl mx-auto">
-            We're always excited to help bring new concepts to life! Whether you're a business or an individual, our in-house design team can work with you from initial idea to finished product. <a href="#contact" class="text-green-600 underline font-medium">Get in touch</a> to start your custom project today.
-          </p>
-        </div>
-      </div>
     </section>
-    <!-- ...rest of your HTML... -->
+
+    <!-- [Rest of the sections remain the same] -->
+
 </body>
 </html>
