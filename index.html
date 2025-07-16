@@ -71,36 +71,36 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-1 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <img src="images/eco-print-innovations-logo-v1.png" alt="Eco Print Innovations Logo" class="h-4 w-auto">
-            </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link active-nav">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#how-it-works" class="nav-link">How It Works</a>
-                <a href="#shop" class="nav-link">Shop</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
+<header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300" id="site-header">
+    <div class="container mx-auto px-4 py-2 md:py-1 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <img src="images/eco-print-innovations-logo-v1.png" alt="Eco Print Innovations Logo" class="h-6 w-auto md:h-5">
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-                <a href="#home" class="py-2 border-b">Home</a>
-                <a href="#services" class="py-2 border-b">Services</a>
-                <a href="#how-it-works" class="py-2 border-b">How It Works</a>
-                <a href="#shop" class="py-2 border-b">Shop</a>
-                <a href="#about" class="py-2 border-b">About</a>
-                <a href="#contact" class="py-2">Contact</a>
-            </div>
+        <nav class="hidden md:flex space-x-6 text-sm md:text-base">
+            <a href="#home" class="nav-link active-nav">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#how-it-works" class="nav-link">How It Works</a>
+            <a href="#shop" class="nav-link">Shop</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
-    </header>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3 text-sm">
+            <a href="#home" class="py-2 border-b">Home</a>
+            <a href="#services" class="py-2 border-b">Services</a>
+            <a href="#how-it-works" class="py-2 border-b">How It Works</a>
+            <a href="#shop" class="py-2 border-b">Shop</a>
+            <a href="#about" class="py-2 border-b">About</a>
+            <a href="#contact" class="py-2">Contact</a>
+        </div>
+    </div>
+</header>
 
     <section id="home" class="hero-gradient text-white py-20 md:py-32">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
