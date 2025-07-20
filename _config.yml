@@ -1,9 +1,7 @@
 title: Eco Print Innovations
 description: Complete 3D printing solutions
 url: https://ecoprintinnovations.github.io
-# Build settings
 theme: minima
 plugins:
   - jekyll-feed
-# GitHub Pages requirements
 remote_theme: jekyll/minima
