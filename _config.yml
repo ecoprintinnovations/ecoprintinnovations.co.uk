@@ -8,4 +8,4 @@ plugins:
   - jekyll-feed
 
 # GitHub Pages requirements
-remote_theme:
+remote_theme: jekyll/minima
