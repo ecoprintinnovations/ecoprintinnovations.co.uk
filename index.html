@@ -1,73 +1,57 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Complete 3D printing solutions for individuals, businesses, education, and cultural institutions. From idea creation to full manufacturing, training, and maintenance.">
-    <meta name="keywords" content="3D printing services, business prototyping, educational 3D printing, museum exhibits, school 3D projects, 3D printing training, 3D printer repair">
-    
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com;">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    
-    <title>Eco Print Innovations | Complete 3D Printing Solutions</title>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- CSS Resources -->
+    <title>Eco Print Innovations | Sustainable 3D Printing for a Smarter Future</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- PWA Metadata -->
-    <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="theme-color" content="#28b463">
-    
     <style>
-        :root {
-            --primary: #28b463;
-            --primary-dark: #219653;
-        }
-        
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
-        
         .hero-gradient {
             background: linear-gradient(135deg, rgba(40, 180, 99, 0.9) 0%, rgba(33, 150, 83, 0.9) 100%);
         }
-        
+        .leaf-circuit-logo {
+            position: relative;
+        }
+        .leaf-circuit-logo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,5 C60,15 70,25 80,35 C90,45 95,55 95,65 C95,75 85,85 75,90 C65,95 55,95 45,90 C35,85 25,75 15,65 C5,55 5,45 15,35 C25,25 35,15 45,5 C47,7 49,9 50,5 Z" fill="none" stroke="white" stroke-width="1"/><path d="M30,50 L40,50 M50,50 L60,50 M70,50 L80,50 M50,30 L50,40 M50,60 L50,70" stroke="white" stroke-width="1"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.7;
+        }
         .file-upload-container {
             border: 2px dashed #4CAF50;
             transition: all 0.3s ease;
         }
-        
         .file-upload-container:hover {
             background-color: rgba(76, 175, 80, 0.1);
         }
-        
-        .material-card:hover, 
-        .service-card:hover, 
-        .sector-card:hover {
+        .material-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
         .nav-link {
             position: relative;
         }
-        
         .nav-link::after {
             content: '';
             position: absolute;
@@ -75,1266 +59,750 @@
             height: 2px;
             bottom: -2px;
             left: 0;
-            background-color: var(--primary);
+            background-color: #4CAF50;
             transition: width 0.3s ease;
         }
-        
         .nav-link:hover::after {
             width: 100%;
         }
-        
         .active-nav::after {
             width: 100%;
         }
-        
-        .how-it-works-step {
-            position: relative;
-            padding-left: 3rem;
+        .eco-badge {
+            animation: pulse 2s infinite;
         }
-        
-        .how-it-works-step::before {
-            content: attr(data-step);
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 2rem;
-            font-weight: bold;
-            color: rgba(76, 175, 80, 0.2);
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        
-        /* Accessibility improvements */
-        a:focus, 
-        button:focus, 
-        input:focus, 
-        select:focus, 
-        textarea:focus {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-        
-        @media (prefers-reduced-motion: reduce) {
-            .animate {
-                animation: none;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
             }
-            
-            html {
-                scroll-behavior: auto;
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
             }
         }
-        
-        /* Dark mode support */
-        .dark {
-            --tw-bg-opacity: 1;
-            background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
-            --tw-text-opacity: 1;
-            color: rgba(229, 231, 235, var(--tw-text-opacity));
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .circuit-pattern {
+            background-image: radial-gradient(circle, rgba(76, 175, 80, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300 dark:bg-gray-800 dark:text-white" id="site-header">
-        <div class="container mx-auto px-4 py-2 md:py-1 flex justify-between items-center">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <img src="images/eco-print-innovations-logo-v1.png" 
-                     alt="Eco Print Innovations Logo - 3D printing solutions provider" 
-                     class="h-10 w-auto md:h-12" 
-                     loading="lazy"
-                     width="120"
-                     height="48">
+                <div class="leaf-circuit-logo bg-green-600 w-10 h-10 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-leaf text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-bold text-gray-800">Eco Print Innovations</span>
             </div>
-            <nav class="hidden md:flex space-x-6 text-sm md:text-base">
+            <nav class="hidden md:flex space-x-8">
                 <a href="#home" class="nav-link active-nav">Home</a>
-                <a href="#sectors" class="nav-link">Sectors</a>
                 <a href="#services" class="nav-link">Services</a>
-                <a href="#how-it-works" class="nav-link">Process</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
                 <a href="#materials" class="nav-link">Materials</a>
+                <a href="#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <div class="md:hidden flex items-center space-x-4">
-                <button id="theme-toggle" class="text-gray-800 dark:text-white focus:outline-none" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon dark:hidden" aria-hidden="true"></i>
-                    <i class="fas fa-sun hidden dark:block" aria-hidden="true"></i>
-                </button>
-                <button id="mobile-menu-button" 
-                        class="text-gray-800 dark:text-white focus:outline-none" 
-                        aria-label="Toggle mobile menu" 
-                        aria-expanded="false" 
-                        aria-controls="mobile-menu">
-                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition">Get Quote</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-700 border-t dark:border-gray-600">
-            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3 text-sm">
-                <a href="#home" class="py-2 border-b dark:border-gray-600">Home</a>
-                <a href="#sectors" class="py-2 border-b dark:border-gray-600">Sectors</a>
-                <a href="#services" class="py-2 border-b dark:border-gray-600">Services</a>
-                <a href="#how-it-works" class="py-2 border-b dark:border-gray-600">Process</a>
-                <a href="#materials" class="py-2 border-b dark:border-gray-600">Materials</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="py-2 border-b">Home</a>
+                <a href="#services" class="py-2 border-b">Services</a>
+                <a href="#how-it-works" class="py-2 border-b">How It Works</a>
+                <a href="#materials" class="py-2 border-b">Materials</a>
+                <a href="#about" class="py-2 border-b">About</a>
                 <a href="#contact" class="py-2">Contact</a>
+                <a href="#contact" class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-green-700 transition">Get Quote</a>
             </div>
         </div>
     </header>
 
-        <!-- Hero Section -->
-    <section id="home" class="hero-gradient text-white py-10 md:py-16">
+    <section id="home" class="hero-gradient text-white py-20 md:py-32">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0 animate">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">3D Printing Solutions for Every Sector</h1>
-                <p class="text-xl mb-6">Serving individuals, businesses, education, and cultural institutions with complete 3D solutions</p>
-                
-                <!-- Target Audience Badges -->
-                <div class="flex flex-wrap gap-2 mb-8">
-                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Individuals</span>
-                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Businesses</span>
-                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Schools</span>
-                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Universities</span>
-                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Museums</span>
-                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Arts & Culture</span>
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <div class="eco-badge bg-white text-green-600 inline-flex items-center px-4 py-1 rounded-full mb-4">
+                    <i class="fas fa-leaf mr-2"></i>
+                    <span class="text-sm font-semibold">Sustainable 3D Printing</span>
                 </div>
-                
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Where Sustainability Meets Precision</h1>
+                <p class="text-xl mb-8">3D Printing, Design, Repairs & Training – All with an Eco-First Approach</p>
                 <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                    <a href="#services" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-gray-100 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600">
-                        Explore Services
-                    </a>
-                    <a href="#sectors" class="border-2 border-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-white hover:text-green-600 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600">
-                        Our Sectors
-                    </a>
+                    <a href="#contact" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-gray-100 transition duration-300 transform hover:scale-105">Upload Your File for a Free Quote</a>
+                    <a href="#services" class="border-2 border-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-white hover:text-green-600 transition duration-300 transform hover:scale-105">Our Services</a>
                 </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center animate" style="animation-delay: 0.2s;">
-                <img src="https://ecoprintinnovations.github.io/ecoprintinnovations.co.uk/images/3D_Printer_In_Action.png" 
-                     alt="A 3D printer In action" 
-                     class="rounded-lg shadow-xl w-full max-w-md" 
-                     loading="lazy"
-                     width="800"
-                     height="600">
-            </div>
-        </div>
-    </section>
-        
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Individuals -->
-                <div class="sector-card bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover:shadow-md transition duration-300">
-                    <div class="bg-green-100 dark:bg-green-900 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-user text-green-600 dark:text-green-300"></i>
+                <div class="mt-8 flex items-center space-x-4">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Happy customer">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Happy customer">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Happy customer">
                     </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Individuals</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Bring your personal projects to life with our custom 3D printing services.</p>
-                    <ul class="mt-4 space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Custom creations</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Hobbyist projects</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Personalised items</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Businesses -->
-                <div class="sector-card bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover:shadow-md transition duration-300">
-                    <div class="bg-green-100 dark:bg-green-900 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-briefcase text-green-600 dark:text-green-300"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Businesses</h3>
-                    <p class="text-gray-600 dark:text-gray-300">From prototypes to production, we support commercial 3D printing needs.</p>
-                    <ul class="mt-4 space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Product development</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Manufacturing support</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Custom solutions</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Education -->
-                <div class="sector-card bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover:shadow-md transition duration-300">
-                    <div class="bg-green-100 dark:bg-green-900 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-graduation-cap text-green-600 dark:text-green-300"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Education</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Supporting schools, colleges and universities with 3D technology.</p>
-                    <ul class="mt-4 space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Curriculum support</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Research projects</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">STEM education</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Arts & Culture -->
-                <div class="sector-card bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover:shadow-md transition duration-300">
-                    <div class="bg-green-100 dark:bg-green-900 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-palette text-green-600 dark:text-green-300"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Arts & Culture</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Enabling creative expression through 3D printing technology.</p>
-                    <ul class="mt-4 space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Art installations</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Cultural preservation</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Creative projects</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Museums -->
-                <div class="sector-card bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover:shadow-md transition duration-300">
-                    <div class="bg-green-100 dark:bg-green-900 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-landmark text-green-600 dark:text-green-300"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Museums</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Innovative solutions for exhibits and artefact reproduction.</p>
-                    <ul class="mt-4 space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Exhibit components</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Interactive displays</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Educational models</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Special Projects -->
-                <div class="sector-card bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover:shadow-md transition duration-300">
-                    <div class="bg-green-100 dark:bg-green-900 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-star text-green-600 dark:text-green-300"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Special Projects</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Unique solutions for specialised applications across all sectors.</p>
-                    <ul class="mt-4 space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Custom commissions</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Innovative solutions</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                            <span class="dark:text-gray-300">Collaborative projects</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-50 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-green-700 dark:text-green-400 mb-2">Our Comprehensive Services</h2>
-                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">End-to-end solutions tailored to your sector's needs</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Idea Creation & Design -->
-                <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
-                    <div class="bg-green-100 dark:bg-green-900 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-lightbulb text-green-600 dark:text-green-300 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Idea Creation & Design</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">From concept to CAD model, we bring your ideas to digital life.</p>
-                    <ul class="space-y-2 mb-4">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Concept development</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">3D modelling & CAD</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Design optimisation</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Sector-specific solutions</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="text-green-600 dark:text-green-400 font-medium inline-flex items-center mt-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded">
-                        Start Your Design <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                
-                <!-- Printing & Manufacturing -->
-                <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
-                    <div class="bg-green-100 dark:bg-green-900 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-print text-green-600 dark:text-green-300 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Printing & Manufacturing</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">From prototypes to full production with quality assurance.</p>
-                    <ul class="space-y-2 mb-4">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Rapid prototyping</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Small batch production</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Full-scale manufacturing</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Quality control</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="text-green-600 dark:text-green-400 font-medium inline-flex items-center mt-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded">
-                        Request Production <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                
-                <!-- Training & Education -->
-                <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
-                    <div class="bg-green-100 dark:bg-green-900 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-graduation-cap text-green-600 dark:text-green-300 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Training & Education</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Comprehensive learning solutions for all skill levels.</p>
-                    <ul class="space-y-2 mb-4">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Online courses</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">In-person workshops</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Institutional training</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Certification programmes</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="text-green-600 dark:text-green-400 font-medium inline-flex items-center mt-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded">
-                        Explore Training <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                
-                <!-- Maintenance & Servicing -->
-                <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
-                    <div class="bg-green-100 dark:bg-green-900 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-tools text-green-600 dark:text-green-300 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Maintenance & Servicing</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Keep your equipment running at peak performance.</p>
-                    <ul class="space-y-2 mb-4">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Regular maintenance</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Performance optimisation</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Preventative care</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Equipment audits</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="text-green-600 dark:text-green-400 font-medium inline-flex items-center mt-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded">
-                        Schedule Service <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                
-                <!-- Repair & Troubleshooting -->
-                <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
-                    <div class="bg-green-100 dark:bg-green-900 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-wrench text-green-600 dark:text-green-300 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Repair & Troubleshooting</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Expert solutions for your 3D printing issues.</p>
-                    <ul class="space-y-2 mb-4">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Remote diagnostics</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">On-site repairs</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Component replacement</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Emergency support</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="text-green-600 dark:text-green-400 font-medium inline-flex items-center mt-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded">
-                        Get Repair Help <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                
-                <!-- Consultation -->
-                <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6">
-                    <div class="bg-green-100 dark:bg-green-900 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-comments text-green-600 dark:text-green-300 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Consultation</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Expert advice for your 3D printing projects and strategy.</p>
-                    <ul class="space-y-2 mb-4">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Project planning</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Technology selection</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Workflow optimisation</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            <span class="dark:text-gray-300">Business solutions</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="text-green-600 dark:text-green-400 font-medium inline-flex items-center mt-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded">
-                        Book Consultation <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-16 bg-white dark:bg-gray-800">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-green-700 dark:text-green-400 mb-2">Our Simple Process</h2>
-                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">From concept to creation in just a few easy steps</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Step 1 -->
-                <div class="how-it-works-step" data-step="1">
-                    <h3 class="text-xl font-bold mb-3 dark:text-white">Consultation</h3>
-                    <p class="text-gray-600 dark:text-gray-300">We discuss your project requirements, sector needs, and desired outcomes.</p>
-                    <div class="mt-4 bg-green-50 dark:bg-green-900 rounded-lg p-4">
+                    <div>
                         <div class="flex items-center">
-                            <i class="fas fa-comments text-green-600 dark:text-green-300 mr-2"></i>
-                            <span class="font-medium dark:text-white">Sector-specific advice</span>
+                            <i class="fas fa-star text-yellow-300 mr-1"></i>
+                            <i class="fas fa-star text-yellow-300 mr-1"></i>
+                            <i class="fas fa-star text-yellow-300 mr-1"></i>
+                            <i class="fas fa-star text-yellow-300 mr-1"></i>
+                            <i class="fas fa-star text-yellow-300 mr-1"></i>
                         </div>
-                        <p class="text-sm mt-1 dark:text-gray-300">We tailor our approach to your specific sector requirements</p>
+                        <p class="text-sm">Trusted by 500+ clients</p>
                     </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center relative">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1581093450023-4de8c1f6a0d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="3D Printer at work" class="rounded-lg shadow-xl max-w-full h-auto">
+                    <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-recycle text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">85%</p>
+                                <p class="text-sm text-gray-600">Less waste</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <a href="#services" class="bg-gray-50 p-6 rounded-lg flex items-center space-x-4 hover:bg-green-50 transition duration-300 transform hover:-translate-y-1">
+                    <div class="bg-green-100 p-3 rounded-full">
+                        <i class="fas fa-print text-green-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Explore Services</h3>
+                        <p class="text-sm text-gray-600">Custom 3D printing solutions</p>
+                    </div>
+                </a>
+                <a href="#materials" class="bg-gray-50 p-6 rounded-lg flex items-center space-x-4 hover:bg-green-50 transition duration-300 transform hover:-translate-y-1">
+                    <div class="bg-green-100 p-3 rounded-full">
+                        <i class="fas fa-leaf text-green-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Eco Materials</h3>
+                        <p class="text-sm text-gray-600">Sustainable printing materials</p>
+                    </div>
+                </a>
+                <a href="#how-it-works" class="bg-gray-50 p-6 rounded-lg flex items-center space-x-4 hover:bg-green-50 transition duration-300 transform hover:-translate-y-1">
+                    <div class="bg-green-100 p-3 rounded-full">
+                        <i class="fas fa-cogs text-green-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">How It Works</h3>
+                        <p class="text-sm text-gray-600">Simple 4-step process</p>
+                    </div>
+                </a>
+                <a href="#contact" class="bg-gray-50 p-6 rounded-lg flex items-center space-x-4 hover:bg-green-50 transition duration-300 transform hover:-translate-y-1">
+                    <div class="bg-green-100 p-3 rounded-full">
+                        <i class="fas fa-headset text-green-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Need Help?</h3>
+                        <p class="text-sm text-gray-600">Contact our experts</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Our Sustainable Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">We offer a comprehensive range of eco-friendly 3D printing services tailored to your needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden material-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="3D Printing Service" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-print text-green-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Custom 3D Printing</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">High-quality 3D printing using sustainable materials tailored to your specifications with minimal waste.</p>
+                        <div class="flex justify-end">
+                            <a href="#contact" class="text-green-600 hover:text-green-700 font-medium">Get Quote →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden material-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581093057306-e2683d1fccc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Design Service" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-pencil-ruler text-green-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">3D Design & Modeling</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Our experts will bring your ideas to life with eco-conscious design principles and optimized material usage.</p>
+                        <div class="flex justify-end">
+                            <a href="#contact" class="text-green-600 hover:text-green-700 font-medium">Get Quote →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden material-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581093450023-4de8c1f6a0d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Repair Service" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-tools text-green-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Repair & Maintenance</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Extend the life of your 3D printed items with our repair services, reducing waste and saving resources.</p>
+                        <div class="flex justify-end">
+                            <a href="#contact" class="text-green-600 hover:text-green-700 font-medium">Get Quote →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300 transform hover:scale-105">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-16 bg-white circuit-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">How Our Process Works</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Simple steps from idea to sustainable reality</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-green-600 font-bold text-2xl">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Upload Your Design</h3>
+                    <p class="text-gray-600">Send us your 3D file or describe your idea for our designers to create.</p>
                 </div>
                 
                 <!-- Step 2 -->
-                <div class="how-it-works-step" data-step="2">
-                    <h3 class="text-xl font-bold mb-3 dark:text-white">Solution Design</h3>
-                    <p class="text-gray-600 dark:text-gray-300">We create a customised plan addressing all technical and creative aspects.</p>
-                    <div class="mt-4 bg-green-50 dark:bg-green-900 rounded-lg p-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-lightbulb text-green-600 dark:text-green-300 mr-2"></i>
-                            <span class="font-medium dark:text-white">Tailored solutions</span>
-                        </div>
-                        <p class="text-sm mt-1 dark:text-gray-300">Whether it's educational, artistic, or industrial, we've got you covered</p>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-green-600 font-bold text-2xl">2</span>
                     </div>
+                    <h3 class="text-xl font-semibold mb-3">Material Selection</h3>
+                    <p class="text-gray-600">Choose from our range of sustainable materials that fit your project.</p>
                 </div>
                 
                 <!-- Step 3 -->
-                <div class="how-it-works-step" data-step="3">
-                    <h3 class="text-xl font-bold mb-3 dark:text-white">Execution</h3>
-                    <p class="text-gray-600 dark:text-gray-300">We implement the solution with quality materials and precise execution.</p>
-                    <div class="mt-4">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check-circle text-green-600 dark:text-green-300"></i>
-                            <span class="font-medium dark:text-white">Sector-approved results</span>
-                        </div>
-                        <div class="flex items-center space-x-2 mt-2">
-                            <i class="fas fa-award text-green-600 dark:text-green-300"></i>
-                            <span class="font-medium dark:text-white">Quality guaranteed</span>
-                        </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-green-600 font-bold text-2xl">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Review & Approve</h3>
+                    <p class="text-gray-600">We'll provide a quote and digital preview for your approval.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-green-600 font-bold text-2xl">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Print & Deliver</h3>
+                    <p class="text-gray-600">We print using eco-friendly methods and ship with sustainable packaging.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-green-50 rounded-xl p-8 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-3">Ready to Start Your Project?</h3>
+                    <p class="text-gray-600">Upload your file now and get a free quote within 24 hours.</p>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end">
+                    <div class="file-upload-container w-full max-w-md p-8 rounded-lg text-center cursor-pointer">
+                        <i class="fas fa-cloud-upload-alt text-4xl text-green-600 mb-3"></i>
+                        <h4 class="font-semibold mb-2">Drag & Drop Your Files Here</h4>
+                        <p class="text-sm text-gray-500 mb-3">or click to browse your files</p>
+                        <p class="text-xs text-gray-400">Supported formats: STL, OBJ, 3MF (Max 50MB)</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Materials Section -->
-    <section id="materials" class="py-16 bg-gray-50 dark:bg-gray-900">
+    <section id="materials" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-green-700 dark:text-green-400 mb-2">Material Options</h2>
-                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">We work with the highest quality materials suitable for all sectors</p>
+                <h2 class="text-3xl font-bold mb-4">Our Sustainable Materials</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Environmentally friendly materials that don't compromise on quality</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- PETG -->
-                <div class="material-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg">
-                    <div class="h-40 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-                        <i class="fas fa-shield-alt text-5xl text-blue-600 dark:text-blue-300"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Material 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden material-card transition duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1611273426858-450d0e9a6c91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="PLA Material" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            Most Popular
+                        </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-lg mb-2 dark:text-white">PETG</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Durable and chemical-resistant with excellent layer adhesion</p>
-                        <div class="text-center">
-                            <a href="#contact" class="text-green-600 dark:text-green-400 font-medium inline-flex items-center justify-center w-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded">
-                                Request a quote <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
+                        <h3 class="text-xl font-semibold mb-2">PLA Bio-Plastic</h3>
+                        <p class="text-gray-600 mb-4">Made from renewable resources like corn starch, fully biodegradable under industrial composting conditions.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-1 justify-end">
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-gray-300"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- ABS -->
-                <div class="material-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg">
-                    <div class="h-40 bg-red-100 dark:bg-red-900 flex items-center justify-center">
-                        <i class="fas fa-hard-hat text-5xl text-red-600 dark:text-red-300"></i>
+                <!-- Material 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden material-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1515191107209-c28698631303?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Recycled PET" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-lg mb-2 dark:text-white">ABS</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Tough and heat-resistant for functional parts</p>
-                        <div class="text-center">
-                            <a href="#contact" class="text-green-600 dark:text-green-400 font-medium inline-flex items-center justify-center w-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded">
-                                Request a quote <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
+                        <h3 class="text-xl font-semibold mb-2">Recycled PET</h3>
+                        <p class="text-gray-600 mb-4">Made from post-consumer plastic bottles, offering excellent durability and recyclability.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-1 justify-end">
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-gray-300"></i>
+                                <i class="fas fa-leaf text-gray-300"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- TPU -->
-                <div class="material-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg">
-                    <div class="h-40 bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
-                        <i class="fas fa-bounce text-5xl text-purple-600 dark:text-purple-300"></i>
+                <!-- Material 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden material-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Wood Composite" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-lg mb-2 dark:text-white">TPU</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Flexible and rubber-like for specialised applications</p>
-                        <div class="text-center">
-                            <a href="#contact" class="text-green-600 dark:text-green-400 font-medium inline-flex items-center justify-center w-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded">
-                                Request a quote <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- PLA -->
-                <div class="material-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg">
-                    <div class="h-40 bg-green-100 dark:bg-green-900 flex items-center justify-center">
-                        <i class="fas fa-leaf text-5xl text-green-600 dark:text-green-300"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-lg mb-2 dark:text-white">PLA</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Biodegradable option with sharp details and vibrant colours</p>
-                        <div class="text-center">
-                            <a href="#contact" class="text-green-600 dark:text-green-400 font-medium inline-flex items-center justify-center w-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded">
-                                Request a quote <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
+                        <h3 class="text-xl font-semibold mb-2">Wood Composite</h3>
+                        <p class="text-gray-600 mb-4">Blend of recycled wood fibers and PLA, creating a natural wood-like finish that's biodegradable.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-1 justify-end">
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <i class="fas fa-leaf text-gray-300"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="mt-12 text-center">
-                <p class="text-gray-600 dark:text-gray-300 mb-4">Not sure which material is right for your sector's needs?</p>
-                <a href="#contact" class="inline-block bg-green-600 dark:bg-green-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 dark:hover:bg-green-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900">
-                    Get Expert Advice
-                </a>
+            <div class="mt-12 bg-white rounded-xl shadow-md p-8">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold mb-3">Not Sure Which Material to Choose?</h3>
+                        <p class="text-gray-600 mb-4">Our material experts can help you select the perfect sustainable option for your project.</p>
+                        <a href="#contact" class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition">Consult Our Experts</a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Material samples" class="rounded-lg shadow">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white dark:bg-gray-800">
+    <section id="about" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <picture>
-                        <source srcset="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80&fm=webp" type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                             alt="Our team working across multiple sectors" 
-                             class="rounded-lg shadow-xl w-full" 
-                             loading="lazy"
-                             width="800"
-                             height="600">
-                    </picture>
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-green-700 dark:text-green-400 mb-4">Our Cross-Sector Expertise</h2>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">
-                        At EcoPrint Innovations, we've built our reputation on understanding the unique needs of each sector we serve. From educational institutions to cultural organisations, we adapt our 3D printing solutions to meet specific requirements.
-                    </p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Our team of engineers, designers, and educators are passionate about delivering solutions that make a real difference across all sectors - whether it's helping a student bring their first design to life or supporting a museum in creating interactive exhibits.
-                    </p>
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold mb-6">Our Commitment to Sustainability</h2>
+                    <p class="text-gray-600 mb-6">At Eco Print Innovations, we believe in the power of technology to create a more sustainable future. Our mission is to provide high-quality 3D printing services while minimizing environmental impact.</p>
+                    
                     <div class="space-y-4">
                         <div class="flex items-start">
-                            <div class="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-4">
-                                <i class="fas fa-crosshairs text-green-600 dark:text-green-300"></i>
+                            <div class="bg-green-100 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-bolt text-green-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold mb-1 dark:text-white">Sector-Specific Approach</h4>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">We tailor our services to the unique needs of each client sector</p>
+                                <h4 class="font-semibold">Solar-Powered Facility</h4>
+                                <p class="text-gray-600">Our printers run on 100% renewable energy from our solar panel array.</p>
                             </div>
                         </div>
+                        
                         <div class="flex items-start">
-                            <div class="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-4">
-                                <i class="fas fa-hands-helping text-green-600 dark:text-green-300"></i>
+                            <div class="bg-green-100 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-recycle text-green-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold mb-1 dark:text-white">Collaborative Process</h4>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">We work closely with clients to understand their specific challenges</p>
+                                <h4 class="font-semibold">Waste Reduction</h4>
+                                <p class="text-gray-600">We recycle 98% of our printing waste and support a closed-loop material system.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-seedling text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Carbon Neutral Shipping</h4>
+                                <p class="text-gray-600">All shipments are carbon offset through our partnership with environmental initiatives.</p>
                             </div>
                         </div>
                     </div>
+                </div>
+                
+                <div class="md:w-1/2 relative">
+                    <div class="bg-green-600 rounded-xl p-6 text-white shadow-lg floating">
+                        <h3 class="text-xl font-bold mb-4">Our Impact in 2023</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-green-700 p-4 rounded-lg">
+                                <p class="text-3xl font-bold mb-1">12.5T</p>
+                                <p class="text-sm">Plastic waste diverted</p>
+                            </div>
+                            <div class="bg-green-700 p-4 rounded-lg">
+                                <p class="text-3xl font-bold mb-1">85%</p>
+                                <p class="text-sm">Less energy used</p>
+                            </div>
+                            <div class="bg-green-700 p-4 rounded-lg">
+                                <p class="text-3xl font-bold mb-1">500+</p>
+                                <p class="text-sm">Happy clients</p>
+                            </div>
+                            <div class="bg-green-700 p-4 rounded-lg">
+                                <p class="text-3xl font-bold mb-1">1M+</p>
+                                <p class="text-sm">Trees planted</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Our team" class="rounded-xl shadow-lg mt-6 w-full">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ & Reviews Section -->
-    <section id="faqs-reviews" class="bg-gray-50 dark:bg-gray-900 py-16">
-        <div class="container mx-auto px-4">
-            <!-- FAQs -->
-            <div class="mb-12">
-                <h2 class="text-3xl font-bold mb-6 text-green-700 dark:text-green-400 text-center">Frequently Asked Questions</h2>
-                <div class="max-w-3xl mx-auto space-y-4">
-                    <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm group">
-                        <summary class="font-semibold cursor-pointer flex justify-between items-center dark:text-white">
-                            <span>Do you offer different solutions for different sectors?</span>
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="mt-2 text-gray-700 dark:text-gray-300">
-                            Absolutely! We customise our approach based on your sector's specific needs. Educational projects focus on curriculum alignment and safety, while commercial projects emphasise durability and functionality. Arts and cultural projects prioritise aesthetic quality and creative expression.
-                        </p>
-                    </details>
-                    
-                    <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm group">
-                        <summary class="font-semibold cursor-pointer flex justify-between items-center dark:text-white">
-                            <span>What file formats do you accept for 3D printing?</span>
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="mt-2 text-gray-700 dark:text-gray-300">
-                            We accept most common 3D file formats including STL, OBJ, 3MF, and STEP files. For educational institutions, we can also work with student-created files from Tinkercad and other beginner-friendly platforms, providing guidance on file optimisation.
-                        </p>
-                    </details>
-                    
-                    <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm group">
-                        <summary class="font-semibold cursor-pointer flex justify-between items-center dark:text-white">
-                            <span>How long does a typical 3D printing project take?</span>
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="mt-2 text-gray-700 dark:text-gray-300">
-                            Project timelines vary based on complexity:
-                            <ul class="list-disc pl-5 mt-2 space-y-1">
-                                <li>Small individual projects: 1-3 business days</li>
-                                <li>Educational class sets: 1-2 weeks</li>
-                                <li>Complex business prototypes: 2-4 weeks</li>
-                                <li>Large museum installations: 4-8 weeks</li>
-                            </ul>
-                            We provide exact timelines after reviewing your project requirements.
-                        </p>
-                    </details>
-                    
-                    <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm group">
-                        <summary class="font-semibold cursor-pointer flex justify-between items-center dark:text-white">
-                            <span>Can you help with educational curriculum integration?</span>
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="mt-2 text-gray-700 dark:text-gray-300">
-                            Yes! We specialise in helping schools and universities integrate 3D printing into their STEM curriculum. We provide lesson plans, project ideas, and training tailored to different age groups and educational levels. Our educational packages include age-appropriate design challenges and assessment rubrics.
-                        </p>
-                    </details>
-                    
-                    <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm group">
-                        <summary class="font-semibold cursor-pointer flex justify-between items-center dark:text-white">
-                            <span>What are your pricing structures for different sectors?</span>
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="mt-2 text-gray-700 dark:text-gray-300">
-                            We offer tailored pricing:
-                            <ul class="list-disc pl-5 mt-2 space-y-1">
-                                <li><strong>Individuals:</strong> Pay-per-print with volume discounts</li>
-                                <li><strong>Businesses:</strong> Subscription models or project-based pricing</li>
-                                <li><strong>Schools:</strong> Educational discounts with bulk printing options</li>
-                                <li><strong>Museums/Cultural:</strong> Custom quotes for exhibition projects</li>
-                            </ul>
-                            Contact us for specific pricing based on your sector and needs.
-                        </p>
-                    </details>
-                    
-                    <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm group">
-                        <summary class="font-semibold cursor-pointer flex justify-between items-center dark:text-white">
-                            <span>What if I need both design and printing services?</span>
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="mt-2 text-gray-700 dark:text-gray-300">
-                            We offer complete end-to-end solutions. Many of our clients start with just an idea, and we handle everything from concept development to final production. Our team will guide you through each step of the process, ensuring seamless integration between design and manufacturing phases.
-                        </p>
-                    </details>
-                    
-                    <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm group">
-                        <summary class="font-semibold cursor-pointer flex justify-between items-center dark:text-white">
-                            <span>Do you provide on-site training and maintenance?</span>
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="mt-2 text-gray-700 dark:text-gray-300">
-                            Yes, we offer both on-site and remote services depending on your needs. For schools and businesses, we often conduct on-site training workshops. Maintenance and repair services are available both remotely and on-site within reasonable travel distance. We also offer annual maintenance contracts for institutions with multiple printers.
-                        </p>
-                    </details>
-                    
-                    <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm group">
-                        <summary class="font-semibold cursor-pointer flex justify-between items-center dark:text-white">
-                            <span>What safety standards do you follow for educational projects?</span>
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="mt-2 text-gray-700 dark:text-gray-300">
-                            All our educational projects comply with:
-                            <ul class="list-disc pl-5 mt-2 space-y-1">
-                                <li>Child-safe materials (non-toxic, BPA-free filaments)</li>
-                                <li>UK education safety standards</li>
-                                <li>CE-certified equipment recommendations</li>
-                                <li>Classroom-appropriate design guidelines</li>
-                            </ul>
-                            We provide complete safety documentation for school administrators.
-                        </p>
-                    </details>
-                    
-                    <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm group">
-                        <summary class="font-semibold cursor-pointer flex justify-between items-center dark:text-white">
-                            <span>Can you replicate fragile museum artifacts?</span>
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="mt-2 text-gray-700 dark:text-gray-300">
-                            Yes, we specialise in non-invasive 3D scanning and replication of delicate artifacts. Our museum services include:
-                            <ul class="list-disc pl-5 mt-2 space-y-1">
-                                <li>Photogrammetry for fragile objects</li>
-                                <li>Material matching for authentic reproductions</li>
-                                <li>Scale adjustments for educational displays</li>
-                                <li>Interactive component integration</li>
-                            </ul>
-                            We work closely with conservators to ensure artifact safety.
-                        </p>
-                    </details>
-                    
-                    <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm group">
-                        <summary class="font-semibold cursor-pointer flex justify-between items-center dark:text-white">
-                            <span>What post-processing options do you offer?</span>
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="mt-2 text-gray-700 dark:text-gray-300">
-                            We provide comprehensive post-processing services tailored to your sector:
-                            <ul class="list-disc pl-5 mt-2 space-y-1">
-                                <li><strong>Sanding & Smoothing:</strong> For aesthetic finishes</li>
-                                <li><strong>Painting & Finishing:</strong> Especially for museum displays</li>
-                                <li><strong>Assembly:</strong> For multi-part business prototypes</li>
-                                <li><strong>Educational Kitting:</strong> Classroom-ready packages</li>
-                                <li><strong>Functional Testing:</strong> For commercial products</li>
-                            </ul>
-                        </p>
-                    </details>
-                </div>
-            </div>
-        
-            <!-- Reviews -->
-            <div>
-                <h2 class="text-3xl font-bold mb-6 text-green-700 dark:text-green-400 text-center">What Our Clients Say</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Education Client Review -->
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-school"></i>
-                            </div>
-                            <div>
-                                <span class="font-semibold dark:text-white">Greenwood High School</span>
-                                <div class="flex items-center mt-1">
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="italic text-gray-700 dark:text-gray-300">
-                            "EcoPrint Innovations transformed our STEM programme with their 3D printing curriculum and equipment training. Their understanding of educational needs is exceptional."
-                        </p>
-                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-400">— Sarah K., STEM Coordinator</div>
-                    </div>
-                    
-                    <!-- Business Client Review -->
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div>
-                                <span class="font-semibold dark:text-white">TechForm Solutions</span>
-                                <div class="flex items-center mt-1">
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="italic text-gray-700 dark:text-gray-300">
-                            "From prototyping to small batch production, EcoPrint delivers consistent quality. Their business understanding helps us reduce costs and accelerate development."
-                        </p>
-                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-400">— Mark T., Product Manager</div>
-                    </div>
-                    
-                    <!-- Museum Client Review -->
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-landmark"></i>
-                            </div>
-                            <div>
-                                <span class="font-semibold dark:text-white">National History Museum</span>
-                                <div class="flex items-center mt-1">
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="italic text-gray-700 dark:text-gray-300">
-                            "The artifact replicas created by EcoPrint Innovations have revolutionized our educational outreach. The detail and accuracy are museum-grade."
-                        </p>
-                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-400">— Dr. Emily R., Curator</div>
-                    </div>
-                    
-                    <!-- Individual Client Review -->
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div>
-                                <span class="font-semibold dark:text-white">James P.</span>
-                                <div class="flex items-center mt-1">
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="italic text-gray-700 dark:text-gray-300">
-                            "As an inventor, EcoPrint has been invaluable in bringing my prototypes to life. Their guidance on materials and design optimizations saved me months of trial and error."
-                        </p>
-                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-400">— James P., Inventor</div>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- CTA -->
-            <div class="mt-16 text-center bg-green-700 text-white rounded-xl py-12 px-4">
-                <h3 class="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
-                <p class="max-w-2xl mx-auto mb-6 text-green-100">
-                    Whether you're an individual creator, educational institution, or business, we have the perfect 3D printing solution for your needs.
-                </p>
-                <a href="#contact" class="inline-block bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700">
-                    Get Your Free Consultation
+    <section class="py-16 bg-green-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Join Our Green Printing Revolution</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Be part of the movement towards sustainable manufacturing. Get started with your eco-friendly 3D printing project today.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#contact" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 transform hover:scale-105">Get a Free Quote</a>
+                <a href="tel:+1234567890" class="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-phone mr-2"></i> Call Us Now
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white dark:bg-gray-800">
+    <section id="contact" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-green-700 dark:text-green-400 mb-2">Get In Touch</h2>
-                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Have questions or ready to start your project? Our team is here to help.</p>
+                <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Have questions or ready to start your project? Contact us today.</p>
             </div>
             
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/2">
-                    <form id="contact-form" class="bg-gray-50 dark:bg-gray-700 rounded-xl shadow-md p-8">
-                        <div class="mb-4">
-                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-green-500 focus:border-green-500 dark:bg-gray-800 dark:text-white">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <div class="bg-white rounded-xl shadow-md p-8 h-full">
+                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Our Location</h4>
+                                    <p class="text-gray-600">123 Green Tech Park, Eco City, EC 12345</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email Us</h4>
+                                    <p class="text-gray-600">info@ecoprintinnovations.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Call Us</h4>
+                                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Working Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 9AM - 6PM</p>
+                                    <p class="text-gray-600">Saturday: 10AM - 4PM</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-green-500 focus:border-green-500 dark:bg-gray-800 dark:text-white">
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-100 p-3 rounded-full hover:bg-green-100 transition">
+                                    <i class="fab fa-facebook-f text-gray-600 hover:text-green-600"></i>
+                                </a>
+                                <a href="#" class="bg-gray-100 p-3 rounded-full hover:bg-green-100 transition">
+                                    <i class="fab fa-twitter text-gray-600 hover:text-green-600"></i>
+                                </a>
+                                <a href="#" class="bg-gray-100 p-3 rounded-full hover:bg-green-100 transition">
+                                    <i class="fab fa-instagram text-gray-600 hover:text-green-600"></i>
+                                </a>
+                                <a href="#" class="bg-gray-100 p-3 rounded-full hover:bg-green-100 transition">
+                                    <i class="fab fa-linkedin-in text-gray-600 hover:text-green-600"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="mb-4">
-                            <label for="sector" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Sector</label>
-                            <select id="sector" name="sector" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-green-500 focus:border-green-500 dark:bg-gray-800 dark:text-white">
-                                <option value="">Select your sector</option>
-                                <option value="individual">Individual</option>
-                                <option value="business">Business</option>
-                                <option value="education-school">Education (School)</option>
-                                <option value="education-higher">Education (College/University)</option>
-                                <option value="arts-culture">Arts & Culture</option>
-                                <option value="museum">Museum</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <label for="service" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Service Needed</label>
-                            <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-green-500 focus:border-green-500 dark:bg-gray-800 dark:text-white">
-                                <option value="">Select service</option>
-                                <option value="design">Design & Idea Creation</option>
-                                <option value="printing">Printing & Manufacturing</option>
-                                <option value="training">Training & Education</option>
-                                <option value="maintenance">Maintenance & Servicing</option>
-                                <option value="repair">Repair & Troubleshooting</option>
-                                <option value="consultation">Consultation</option>
-                                <option value="multiple">Multiple Services</option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
-                            <textarea id="message" name="message" rows="4" required
-                                      class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-green-500 focus:border-green-500 dark:bg-gray-800 dark:text-white"></textarea>
-                        </div>
-                        <button type="submit" 
-                                class="w-full bg-green-600 text-white py-3 px-6 rounded-md hover:bg-green-700 transition font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800">
-                            Send Message
-                        </button>
-                    </form>
+                    </div>
                 </div>
                 
                 <div class="md:w-1/2">
-                    <div class="bg-gray-50 dark:bg-gray-700 rounded-xl shadow-md p-8 h-full">
-                        <h3 class="text-xl font-bold mb-4 dark:text-white">Contact Information</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-4">
-                                    <i class="fas fa-map-marker-alt text-green-600 dark:text-green-300"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold dark:text-white">Our Location</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">123 Greenway Blvd<br>London, EC1A 1BB</p>
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <h3 class="text-xl font-semibold mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="service" class="block text-gray-700 mb-2">Service Interested In</label>
+                                <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                    <option value="">Select a service</option>
+                                    <option value="printing">3D Printing</option>
+                                    <option value="design">3D Design</option>
+                                    <option value="repair">Repair Service</option>
+                                    <option value="training">Training</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="file-upload-container p-6 rounded-lg text-center cursor-pointer">
+                                    <i class="fas fa-cloud-upload-alt text-2xl text-green-600 mb-2"></i>
+                                    <h4 class="font-semibold mb-1">Upload Your Design Files</h4>
+                                    <p class="text-sm text-gray-500">(Optional)</p>
                                 </div>
                             </div>
-                            <div class="flex items-start">
-                                <div class="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-4">
-                                    <i class="fas fa-envelope text-green-600 dark:text-green-300"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold dark:text-white">Email Us</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">info@ecoprintinnovations.co.uk</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-4">
-                                    <i class="fas fa-phone text-green-600 dark:text-green-300"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold dark:text-white">Call Us</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">020 1234 5678</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-4">
-                                    <i class="fas fa-clock text-green-600 dark:text-green-300"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold dark:text-white">Business Hours</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">Monday-Friday: 9am-5pm<br>Saturday: 10am-2pm<br>Sunday: Closed</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-green-100 dark:bg-green-900 p-2 rounded-full mr-4">
-                                    <i class="fas fa-users text-green-600 dark:text-green-300"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold dark:text-white">Sector Specialists</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">We have dedicated teams for education, business, and cultural sectors</p>
-                                </div>
-                            </div>
-                        </div>
+                            
+                            <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <img src="images/eco-print-innovations-logo-v1.png" 
-                         alt="Eco Print Innovations Logo - 3D printing solutions provider" 
-                         class="h-10 w-auto mb-4"
-                         loading="lazy"
-                         width="120"
-                         height="48">
-                    <p class="text-gray-400">Complete 3D printing solutions for all sectors.</p>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded-full p-1">
-                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                            <span class="sr-only">Facebook</span>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded-full p-1">
-                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                            <span class="sr-only">Twitter</span>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded-full p-1">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded-full p-1">
-                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                            <span class="sr-only">LinkedIn</span>
-                        </a>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="leaf-circuit-logo bg-green-600 w-8 h-8 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-leaf text-white text-sm"></i>
+                        </div>
+                        <span class="text-lg font-bold">Eco Print Innovations</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Sustainable 3D printing solutions for a greener future.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
+                
                 <div>
-                    <h3 class="font-bold text-lg mb-4">Sectors</h3>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Individuals</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Businesses</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Schools</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Universities</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Museums</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Arts & Culture</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition">How It Works</a></li>
+                        <li><a href="#materials" class="text-gray-400 hover:text-white transition">Materials</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
+                
                 <div>
-                    <h3 class="font-bold text-lg mb-4">Services</h3>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Design & Creation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Printing Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Training</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Maintenance</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Repairs</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Consultation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">3D Printing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">3D Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Prototyping</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Repairs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Training</a></li>
                     </ul>
                 </div>
+                
                 <div>
-                    <h3 class="font-bold text-lg mb-4">Resources</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Educational Materials</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Business Solutions</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Cultural Projects</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">Case Studies</a></li>
-                    </ul>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-green-600 px-4 py-2 rounded-r-lg hover:bg-green-700 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 EcoPrint Innovations. All rights reserved.</p>
-                <p class="mt-2 text-sm">Serving all sectors with comprehensive 3D printing solutions</p>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Eco Print Innovations. All rights reserved.</p>
+                <div class="mt-2 flex justify-center space-x-4">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Sustainability Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Eco Print Innovations",
-      "image": "https://yourdomain.com/images/eco-print-innovations-logo-v1.png",
-      "@id": "",
-      "url": "https://yourdomain.com",
-      "telephone": "+442012345678",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Greenway Blvd",
-        "addressLocality": "London",
-        "postalCode": "EC1A 1BB",
-        "addressCountry": "GB"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      "sameAs": [
-        "https://www.facebook.com/yourpage",
-        "https://twitter.com/yourhandle",
-        "https://www.instagram.com/yourprofile",
-        "https://www.linkedin.com/company/yourcompany"
-      ]
-    }
-    </script>
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Dark mode toggle
-            const themeToggle = document.getElementById('theme-toggle');
-            const html = document.documentElement;
-            
-            // Check for saved theme preference or use system preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                html.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                html.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            }
-            
-            // Toggle theme on button click
-            themeToggle?.addEventListener('click', () => {
-                html.classList.toggle('dark');
-                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-            });
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
 
-            // Mobile menu with better accessibility
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            menuButton?.addEventListener('click', () => {
-                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-                menuButton.setAttribute('aria-expanded', !isExpanded);
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Smooth scrolling with intersection observer for active nav
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50% 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        document.querySelectorAll('.nav-link').forEach(link => {
-                            link.classList.toggle('active-nav', 
-                                link.getAttribute('href') === `#${entry.target.id}`);
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('section[id]').forEach(section => {
-                observer.observe(section);
-            });
-
-            // Form handling with fetch API
-            const contactForm = document.getElementById('contact-form');
-            contactForm?.addEventListener('submit', async (e) => {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
-                const submitButton = contactForm.querySelector('button[type="submit"]');
-                const originalText = submitButton.textContent;
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
                 
-                try {
-                    submitButton.disabled = true;
-                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
-                    
-                    // Simulate API call (replace with actual fetch)
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-                    
-                    // In a real implementation, you would use:
-                    /*
-                    const response = await fetch('/api/contact', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
                     });
                     
-                    if (!response.ok) throw new Error('Network response was not ok');
-                    */
-                    
-                    alert('Thank you for your message! We will get back to you soon.');
-                    contactForm.reset();
-                } catch (error) {
-                    alert('There was a problem submitting your form. Please try again later.');
-                    console.error('Error:', error);
-                } finally {
-                    submitButton.disabled = false;
-                    submitButton.textContent = originalText;
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
                 }
             });
+        });
 
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                        
-                        
-                        // Close mobile menu if open
-                        const mobileMenu = document.getElementById('mobile-menu');
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                            menuButton.setAttribute('aria-expanded', 'false');
-                        }
-                    }
-                });
+        // Highlight active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
+
+        // File upload interaction
+        const fileUploadContainers = document.querySelectorAll('.file-upload-container');
+        fileUploadContainers.forEach(container => {
+            container.addEventListener('click', function() {
+                // In a real implementation, this would trigger a file input
+                console.log('File upload clicked');
+                // Example: document.getElementById('file-input').click();
+            });
+            
+            container.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
+            });
+            
+            container.addEventListener('dragleave', function() {
+                this.style.backgroundColor = '';
+            });
+            
+            container.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.style.backgroundColor = '';
+                // Handle dropped files
+                console.log('Files dropped', e.dataTransfer.files);
             });
         });
     </script>
