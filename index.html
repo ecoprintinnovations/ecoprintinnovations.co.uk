@@ -95,13 +95,15 @@
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
 <div class="flex items-center space-x-3">
-    <!-- Logo Container (now properly sized) -->
-    <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center">
-        <img src="/images/eco-print-innovations-logo-v1.png"
-             alt="Eco Print Innovations Logo"
-             class="w-10 h-10 object-contain"> <!-- Exact control of image size -->
+    <!-- Logo container with multiple fallback strategies -->
+    <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden">
+        <img 
+            src="/images/eco-print-innovations-logo-v1.png" 
+            alt="Eco Print Innovations Logo"
+            class="h-10 w-10 object-contain"
+            onerror="this.src='https://ecoprintinnovations.github.io/ecoprintinnovations.co.uk-2/images/eco-print-innovations-logo-v1.png';this.onerror=null"
+        >
     </div>
-    <!-- Company Name -->
     <span class="text-xl font-bold text-gray-800">Eco Print Innovations</span>
 </div>
     
