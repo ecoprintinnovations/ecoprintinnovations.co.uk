@@ -89,14 +89,31 @@
 <script>
   Dropzone.autoDiscover = false;
   window.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.dropzone');
-    if (form) {
-      new Dropzone(form, {
-        paramName: 'file',
+    const formElement = document.getElementById('contact-form');
+    if (formElement) {
+      const dz = new Dropzone(formElement, {
+        paramName: 'attachment',
         maxFilesize: 50,
         acceptedFiles: '.stl,.obj,.3mf',
         uploadMultiple: true,
-        autoProcessQueue: false, // disable auto-upload (use manual submit if needed)
+        autoProcessQueue: false,
+      });
+
+      formElement.addEventListener('submit', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (dz.getQueuedFiles().length > 0) {
+          dz.processQueue();
+        } else {
+          formElement.submit();
+        }
+      });
+
+      dz.on('queuecomplete', function () {
+        const next = formElement.querySelector('input[name="_next"]').value;
+        if (next) {
+          window.location.href = next;
+        }
       });
     }
   });
@@ -567,7 +584,7 @@ Keep your machines running longer, cut downtime, and reduce waste  whether it’
 <div class="md:w-1/2">
 <div class="bg-white rounded-xl shadow-md p-8">
 <h3 class="text-xl font-semibold mb-6">Send Us a Message</h3>
-<form action="https://formsubmit.co/ecoprintinnovations@gmail.com" class="dropzone" enctype="multipart/form-data" method="POST">
+<form id="contact-form" action="https://formsubmit.co/ecoprintinnovations@gmail.com" class="dropzone" enctype="multipart/form-data" method="POST">
     <input type="hidden" name="_subject" value="New 3D File Upload from Eco Print Innovations!"/>
     <input type="hidden" name="_captcha" value="false"/>
     <input type="hidden" name="_next" value="https://ecoprintinnovations.github.io/ecoprintinnovations.co.uk/thankyou.html"/>
