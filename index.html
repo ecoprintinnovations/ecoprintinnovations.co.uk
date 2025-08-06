@@ -576,6 +576,7 @@ Keep your machines running longer, cut downtime, and reduce waste  whether it’
     <input type="hidden" name="_subject" value="New 3D File Upload from Eco Print Innovations!"/>
     <input type="hidden" name="_captcha" value="false"/>
     <input type="hidden" name="_next" value="https://ecoprintinnovations.github.io/ecoprintinnovations.co.uk/thankyou.html"/>
+    <input type="hidden" name="request_id" id="request-id"/>
 
 <div class="mb-4">
 <label class="block text-gray-700 mb-2" for="name">Your Name</label>
@@ -693,5 +694,19 @@ Keep your machines running longer, cut downtime, and reduce waste  whether it’
 </footer>
 <!-- File Upload -->
 <!-- Contact Form -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const id = 'REQ-' + Date.now();
+    const requestField = document.getElementById('request-id');
+    if (requestField) {
+      requestField.value = id;
+    }
+    const nextField = document.querySelector('input[name="_next"]');
+    if (nextField) {
+      const base = nextField.value.split('?')[0];
+      nextField.value = `${base}?request_id=${encodeURIComponent(id)}`;
+    }
+  });
+</script>
 </body>
 </html>
