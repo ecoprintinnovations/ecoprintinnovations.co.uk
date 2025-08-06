@@ -108,8 +108,14 @@
           formElement.submit();
         }
       });
+      dz.on('sendingmultiple', function (files, xhr, formData) {
+        const data = new FormData(formElement);
+        for (const [key, value] of data.entries()) {
+          formData.append(key, value);
+        }
+      });
 
-      dz.on('queuecomplete', function () {
+      dz.on('successmultiple', function () {
         const next = formElement.querySelector('input[name="_next"]').value;
         if (next) {
           window.location.href = next;
