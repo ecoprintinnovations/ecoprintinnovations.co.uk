@@ -96,8 +96,16 @@
         maxFilesize: 50,
         acceptedFiles: '.stl,.obj,.3mf',
         uploadMultiple: true,
+        parallelUploads: 10,
         autoProcessQueue: false,
       });
+
+      function appendFormFields(formData) {
+        const fields = formElement.querySelectorAll('input:not([type=file]):not([type=submit]), select, textarea');
+        fields.forEach(field => {
+          formData.append(field.name, field.value);
+        });
+      }
 
       formElement.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -108,19 +116,24 @@
           formElement.submit();
         }
       });
-      dz.on('sendingmultiple', function (files, xhr, formData) {
-        const data = new FormData(formElement);
-        for (const [key, value] of data.entries()) {
-          formData.append(key, value);
-        }
+
+      dz.on('sending', function (file, xhr, formData) {
+        appendFormFields(formData);
       });
 
-      dz.on('successmultiple', function () {
+      dz.on('sendingmultiple', function (files, xhr, formData) {
+        appendFormFields(formData);
+      });
+
+      function handleSuccess() {
         const next = formElement.querySelector('input[name="_next"]').value;
         if (next) {
           window.location.href = next;
         }
-      });
+      }
+
+      dz.on('success', handleSuccess);
+      dz.on('successmultiple', handleSuccess);
     }
   });
 </script>
