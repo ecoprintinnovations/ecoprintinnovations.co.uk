@@ -567,7 +567,11 @@ Keep your machines running longer, cut downtime, and reduce waste  whether it’
 <div class="md:w-1/2">
 <div class="bg-white rounded-xl shadow-md p-8">
 <h3 class="text-xl font-semibold mb-6">Send Us a Message</h3>
-<form>
+<form action="https://formsubmit.co/ecoprintinnovations@gmail.com" class="dropzone" enctype="multipart/form-data" method="POST">
+    <input type="hidden" name="_subject" value="New 3D File Upload from Eco Print Innovations!"/>
+    <input type="hidden" name="_captcha" value="false"/>
+    <input type="hidden" name="_next" value="https://ecoprintinnovations.github.io/ecoprintinnovations.co.uk/thankyou.html"/>
+
 <div class="mb-4">
 <label class="block text-gray-700 mb-2" for="name">Your Name</label>
 <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" id="name" type="text"/>
@@ -595,6 +599,14 @@ Keep your machines running longer, cut downtime, and reduce waste  whether it’
 <label class="block text-gray-700 mb-2" for="message">Your Message</label>
 <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" id="message" rows="4"></textarea>
 </div>
+    <div class="mb-4">
+      <div class="dz-message flex flex-col items-center justify-center p-6 border-2 border-dashed border-green-500 rounded-lg bg-green-50" data-dz-message>
+        <img src="https://img.icons8.com/fluency/48/upload.png" alt="Upload icon"/>
+        <h3 class="text-lg font-semibold mt-2">Drag & Drop Your Files Here (Optional)</h3>
+        <p>or click to browse your files</p>
+        <small>Supported formats: STL, OBJ, 3MF (Max 50MB)</small>
+      </div>
+    </div>
 <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300" type="submit">
                                 Send Message
                             </button>
@@ -603,23 +615,6 @@ Keep your machines running longer, cut downtime, and reduce waste  whether it’
 </div>
 </div>
 </div>
-</section>
-
-<section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-<h2 class="text-2xl font-bold text-center mb-6">Upload Your File for a Free Quote</h2>
-<form action="https://formsubmit.co/ecoprintinnovations@gmail.com" class="dropzone" enctype="multipart/form-data" id="file-dropzone" method="POST" style="border: 2px dashed #10B981; padding: 40px; background: #ECFDF5;">
-<input name="_subject" type="hidden" value="New 3D File Upload from Eco Print Innovations!"/>
-<input name="_captcha" type="hidden" value="false"/>
-<input name="_next" type="hidden" value="https://ecoprintinnovations.github.io/ecoprintinnovations.co.uk/thankyou.html"/>
-<div class="dz-message" data-dz-message="">
-<img src="https://img.icons8.com/fluency/48/upload.png" style="margin: auto;"/>
-<h3 class="text-lg font-semibold mt-2">Drag &amp; Drop Your Files Here</h3>
-<p>or click to browse your files</p>
-<small>Supported formats: STL, OBJ, 3MF (Max 50MB)</small>
-</div>
-<button style="display:none;" type="submit">Send Test</button></form>
-    </div>
 </section>
 <footer class="bg-gray-800 text-white py-12">
 <div class="container mx-auto px-4">
