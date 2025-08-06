@@ -117,23 +117,41 @@
         }
       });
 
+      const progressWrapper = document.getElementById('upload-progress-wrapper');
+      const progressBar = document.getElementById('upload-progress');
+
       dz.on('sending', function (file, xhr, formData) {
         appendFormFields(formData);
+        if (progressWrapper) {
+          progressWrapper.classList.remove('hidden');
+        }
       });
 
       dz.on('sendingmultiple', function (files, xhr, formData) {
         appendFormFields(formData);
+        if (progressWrapper) {
+          progressWrapper.classList.remove('hidden');
+        }
       });
 
-      function handleSuccess() {
+      dz.on('totaluploadprogress', function (progress) {
+        if (progressBar) {
+          progressBar.style.width = progress + '%';
+        }
+      });
+
+      dz.on('queuecomplete', function () {
+        if (progressWrapper) {
+          progressWrapper.classList.add('hidden');
+          if (progressBar) {
+            progressBar.style.width = '0%';
+          }
+        }
         const next = formElement.querySelector('input[name="_next"]').value;
         if (next) {
           window.location.href = next;
         }
-      }
-
-      dz.on('success', handleSuccess);
-      dz.on('successmultiple', handleSuccess);
+      });
     }
   });
 </script>
@@ -656,6 +674,9 @@ Keep your machines running longer, cut downtime, and reduce waste  whether it’
         <h3 class="text-lg font-semibold mt-2">Drag & Drop Your Files Here (Optional)</h3>
         <p>or click to browse your files</p>
         <small>Supported formats: STL, OBJ, 3MF (Max 50MB)</small>
+      </div>
+      <div id="upload-progress-wrapper" class="w-full bg-gray-200 rounded-full h-2 mt-4 hidden">
+        <div id="upload-progress" class="bg-green-600 h-2 rounded-full" style="width: 0%"></div>
       </div>
     </div>
 <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300" type="submit">
