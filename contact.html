@@ -98,7 +98,7 @@
 </div>
 <div>
 <h4 class="font-semibold">Email Us</h4>
-<p class="text-gray-600">ecoprintinnovations@gmail.com</p>
+<p class="text-gray-600"><a id="email-link"></a></p>
 </div>
 </div>
 <div class="flex items-start">
@@ -274,6 +274,14 @@
     if (nextField) {
       const base = nextField.value.split('?')[0];
       nextField.value = `${base}?request_id=${encodeURIComponent(id)}`;
+    }
+    const user = 'ecoprintinnovations';
+    const domain = 'gmail.com';
+    const emailLink = document.getElementById('email-link');
+    if (emailLink) {
+      const email = `${user}@${domain}`;
+      emailLink.href = `mailto:${email}`;
+      emailLink.textContent = email;
     }
   });
 </script>
