@@ -5,30 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You - Eco Print Innovations</title>
   <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
-  <style>
-    .hero-gradient {
-      background: linear-gradient(135deg, rgba(40, 180, 99, 0.9) 0%, rgba(33, 150, 83, 0.9) 100%);
-    }
-  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <section class="hero-gradient text-white py-20 md:py-28">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Eco Print Innovations</h1>
-      <p class="text-xl md:text-2xl font-medium mb-2">Engineering-led 3D printing for UK businesses</p>
-      <p class="text-sm md:text-base text-white/90">UK-based • Fast turnaround • Engineering support</p>
-    </div>
-  </section>
-  <main class="py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-lg mx-auto text-center p-8 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold mb-4">Thank you!</h2>
-        <p class="mb-6">Your message has been sent successfully. We'll be in touch soon.</p>
-        <p id="request-id" class="mb-6"></p>
-        <a href="/ecoprintinnovations.co.uk/" class="text-green-600 hover:underline">Return to home page</a>
-      </div>
-    </div>
-  </main>
+<body class="bg-gray-50 flex items-center justify-center h-screen">
+  <div class="text-center p-8 bg-white rounded-lg shadow-md">
+    <h1 class="text-2xl font-semibold mb-4">Thank you!</h1>
+    <p class="mb-6">Your message has been sent successfully. We'll be in touch soon.</p>
+    <p id="request-id" class="mb-6"></p>
+    <a href="/ecoprintinnovations.co.uk/" class="text-green-600 hover:underline">Return to home page</a>
+  </div>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const params = new URLSearchParams(window.location.search);
