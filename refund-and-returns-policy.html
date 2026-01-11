@@ -3,72 +3,21 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="site-base" content=""/>
   <title>Refund and Returns Policy - Eco Print Innovations</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="assets/css/site.css" rel="stylesheet"/>
   <style>
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #4CAF50;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .active-nav::after {
-            width: 100%;
-        }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-<header class="bg-white shadow-md sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <div class="flex items-center space-x-2">
-      <div class="leaf-circuit-logo bg-green-600 w-[6.75rem] h-[6.75rem] rounded-lg flex items-center justify-center">
-        <img alt="Eco Print Innovations Logo" class="w-[6.75rem] h-[6.75rem]" src="/images/eco-print-innovations-logo-v1.png"/>
-      </div>
-      <span class="text-xl font-bold text-gray-800">Eco Print Innovations</span>
-    </div>
-    <nav class="hidden md:flex space-x-8">
-      <a class="nav-link" href="/index.html">Home</a>
-      <a class="nav-link" href="/#services">Services</a>
-      <a class="nav-link" href="/#materials">Materials</a>
-      <a class="nav-link" href="/#about">About</a>
-      <a class="nav-link" href="/contact.html">Contact</a>
-    </nav>
-    <div class="hidden md:block">
-      <a class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition" href="/contact.html">Get Quote</a>
-    </div>
-    <div class="md:hidden">
-      <button class="text-gray-800 focus:outline-none" id="mobile-menu-button">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </div>
-  </div>
-  <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
-    <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-      <a class="py-2 border-b" href="/index.html">Home</a>
-      <a class="py-2 border-b" href="/#services">Services</a>
-      <a class="py-2 border-b" href="/#materials">Materials</a>
-      <a class="py-2 border-b" href="/#about">About</a>
-      <a class="py-2" href="/contact.html">Contact</a>
-      <a class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-green-700 transition" href="/contact.html">Get Quote</a>
-    </div>
-  </div>
-</header>
+<div id="site-header"></div>
 <main class="py-16 bg-gray-50">
   <div class="container mx-auto px-4">
     <h1 class="text-3xl font-bold mb-4">Eco Print Innovations – Refund and Returns Policy</h1>
@@ -174,5 +123,6 @@
 </script>
 -->
 <script src="/consent.js" data-ga-id="" data-pixel-id=""></script>
+<script src="assets/js/header.js" defer></script>
 </body>
 </html>

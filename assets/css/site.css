@@ -1,0 +1,36 @@
+:root {
+  --header-height: 7.5rem;
+}
+
+#site-header {
+  min-height: var(--header-height);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+
+.leaf-circuit-logo {
+  position: relative;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after,
+.nav-link[aria-current='page']::after {
+  width: 100%;
+}
