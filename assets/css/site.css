@@ -34,3 +34,14 @@ section[id] {
 .nav-link[aria-current='page']::after {
   width: 100%;
 }
+
+.contact-form-embed {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.contact-form-embed iframe {
+  width: 100%;
+  border: none;
+}
