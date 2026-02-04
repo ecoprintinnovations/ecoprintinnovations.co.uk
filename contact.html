@@ -102,61 +102,17 @@ Finish: (as-printed / sanded / paint-ready)
 Delivery postcode (first part):
 </div>
           <a class="inline-flex items-center justify-center w-full bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition mb-8" href="mailto:ecoprintinnovations@gmail.com?subject=B2B%20Brief%20%E2%80%93%20Eco%20Print%20Innovations&body=What%20you%20need%3A%0AUse%20case%20%2F%20environment%3A%0ADimensions%20%2F%20constraints%3A%0AQuantity%3A%0ADeadline%3A%0AFiles%20%28STEP%20preferred%20%2F%20STL%20ok%29%3A%0ATolerances%20%2F%20fit-critical%20areas%3A%0AFinish%3A%0ADelivery%20postcode%20%28first%20part%29%3A">Send brief by email</a>
-<h3 class="text-xl font-semibold mb-6">Or use the form</h3>
-<form id="contact-form" action="https://formsubmit.co/ecoprintinnovations@gmail.com" enctype="multipart/form-data" method="POST">
-<input type="hidden" name="_subject" value="New 3D File Upload from Eco Print Innovations"/>
-<input type="hidden" name="_captcha" value="false"/>
-<input type="hidden" name="_autoresponse" value="Thank you for contacting Eco Print Innovations. We will get back to you soon."/>
-<input type="hidden" name="_next" value="https://ecoprintinnovations.co.uk/thankyou.html"/>
-<input type="hidden" name="request_id" id="request-id"/>
-<div class="mb-4">
-<label class="block text-gray-700 mb-2" for="name">Your Name</label>
-<input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" id="name" name="name" type="text"/>
+<div class="contact-form-embed">
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSfN49OOMPHESiGla62eNLUvUh4vEPQR-IEw4qm2W7nvQYApjA/viewform?embedded=true"
+    width="100%"
+    height="900"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0">
+    Loading…
+  </iframe>
 </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 mb-2" for="email">Email Address</label>
-          <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" id="email" name="email" type="email"/>
-          <input type="hidden" id="reply-to" name="_replyto"/>
-        </div>
-<div class="mb-4">
-<label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
-<input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" id="phone" name="phone" type="tel"/>
-</div>
-<div class="mb-4">
-<label class="block text-gray-700 mb-2" for="service">Service Interested In</label>
-<select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" id="service" name="service">
-<option value="">Select a service</option>
-<option value="printing">3D Printing</option>
-<option value="design">3D Design</option>
-<option value="repair">Repair Service</option>
-<option value="training">Training</option>
-<option value="other">Other</option>
-</select>
-</div>
-<div class="mb-4">
-<label class="block text-gray-700 mb-2" for="material">Material</label>
-<select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" id="material" name="material">
-<option value="">Select a material</option>
-<option value="pla">PLA</option>
-<option value="abs">ABS</option>
-<option value="petg">PETG</option>
-<option value="tpu">TPU</option>
-<option value="nylon">Nylon</option>
-<option value="asa">ASA</option>
-<option value="polycarbonate">Polycarbonate</option>
-<option value="hips">HIPS</option>
-<option value="other">Other</option>
-</select>
-</div>
-<div class="mb-4">
-<label class="block text-gray-700 mb-2" for="message">Your Message</label>
-<textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" id="message" name="message" rows="4"></textarea>
-</div>
-<div class="mb-4">
-<input type="file" id="attachments" name="attachment" multiple />
-</div>
-<button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300" type="submit">Send Message</button>
-</form>
 </div>
 </div>
 </div>
@@ -230,33 +186,6 @@ Delivery postcode (first part):
 </div>
 </div>
 </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const id = 'REQ-' + Date.now();
-    const requestField = document.getElementById('request-id');
-    if (requestField) {
-      requestField.value = id;
-    }
-    const nextField = document.querySelector('input[name="_next"]');
-    if (nextField) {
-      const base = nextField.value.split('?')[0];
-      nextField.value = `${base}?request_id=${encodeURIComponent(id)}`;
-    }
-    const emailField = document.getElementById('email');
-    const replyToField = document.getElementById('reply-to');
-    if (emailField && replyToField) {
-      const syncReplyTo = () => {
-        replyToField.value = emailField.value.trim();
-      };
-      emailField.addEventListener('input', syncReplyTo);
-      const form = document.getElementById('contact-form');
-      if (form) {
-        form.addEventListener('submit', syncReplyTo);
-      }
-      syncReplyTo();
-    }
-  });
-</script>
 <!-- Facebook Pixel (disabled by default)
      To enable, set a pixel ID via data-pixel-id on consent.js script tag
      or define FB_PIXEL_ID in the environment. Uncomment the code below to
