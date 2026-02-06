@@ -113,6 +113,81 @@
   We’ll only use your details to respond to this enquiry. File uploads may require Google sign-in.
 </p>
 <div class="contact-form-embed">
+        <form id="contact-form" method="POST" enctype="multipart/form-data">
+        <!-- Honeypot field -->
+        <input type="text" name="website" style="display:none;" />
+        
+        <div class="form-group">
+          <label for="first_name">First Name *</label>
+          <input type="text" id="first_name" name="first_name" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="surname">Surname *</label>
+          <input type="text" id="surname" name="surname" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" />
+        </div>
+        
+        <div class="form-group">
+          <label for="service">Service Required *</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="Design">Design</option>
+            <option value="Printing">Printing</option>
+            <option value="Consultation">Consultation</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="material">Material Type</label>
+          <input type="text" id="material" name="material" />
+        </div>
+        
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="text" id="quantity" name="quantity" />
+        </div>
+        
+        <div class="form-group">
+          <label for="timeframe">Timeframe</label>
+          <input type="text" id="timeframe" name="timeframe" />
+        </div>
+        
+        <div class="form-group">
+          <label for="description">Project Description *</label>
+          <textarea id="description" name="description" rows="5" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="files">Upload Files</label>
+          <input type="file" id="files" name="files" multiple />
+        </div>
+        
+        <div class="form-group">
+          <label for="contact_method">Preferred Contact Method</label>
+          <select id="contact_method" name="contact_method">
+            <option value="Email">Email</option>
+            <option value="Phone">Phone</option>
+            <option value="Both">Both</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+      <div id="form-success" style="display:none;">
+        <p>Thank you for your submission! We will respond within 24 hours.</p>
+      </div>
   <iframe
     src="https://docs.google.com/forms/d/e/1FAIpQLSceaOw6KJ0kQkoaJPylvEKEwxzIfTCnsGu23pFSbntByxRC2Q/viewform?embedded=true"
     width="100%"
@@ -225,5 +300,6 @@
 -->
 <script src="/consent.js" data-ga-id="" data-pixel-id=""></script>
 <script src="assets/js/header.js" defer></script>
+      <script src="assets/js/convert.js" defer></script>
 </body>
 </html>
