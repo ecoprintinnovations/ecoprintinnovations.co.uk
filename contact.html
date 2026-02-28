@@ -9,26 +9,96 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link href="assets/css/site.css" rel="stylesheet"/>
+  <script src="https://web3forms.com/client/script.js" async defer></script>
   <style>
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
-        .form-intro {
-            max-width: 800px;
-            margin: 0 auto 1rem;
-            font-size: 0.95rem;
-            color: #4b5563;
+        .quote-form {
+            margin-top: 1.5rem;
+            display: grid;
+            gap: 1.5rem;
         }
-        .form-helper {
-            max-width: 800px;
-            margin: 2rem auto 0;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e5e7eb;
+        .quote-form fieldset {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+        }
+        .quote-form legend {
+            font-weight: 600;
+            color: #166534;
+            padding: 0 0.35rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+        .form-group label {
+            font-weight: 500;
+            color: #1f2937;
             font-size: 0.95rem;
+        }
+        .quote-form input,
+        .quote-form select,
+        .quote-form textarea {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 0.625rem;
+            padding: 0.7rem 0.8rem;
+            font-size: 0.95rem;
+            background: #ffffff;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .quote-form input:focus,
+        .quote-form select:focus,
+        .quote-form textarea:focus {
+            outline: none;
+            border-color: #16a34a;
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
+        }
+        .quote-form textarea {
+            min-height: 8rem;
+            resize: vertical;
+        }
+        .quote-form button {
+            border: 0;
+            border-radius: 0.625rem;
+            padding: 0.85rem 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #16a34a;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .quote-form button:hover,
+        .quote-form button:focus-visible {
+            background-color: #15803d;
+        }
+        .gdpr-note {
+            color: #4b5563;
+            display: block;
+            line-height: 1.5;
         }
         #send-brief {
             scroll-margin-top: 90px;
+        }
+        #printing-details {
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .form-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .form-group.full {
+                grid-column: 1 / -1;
+            }
         }
   </style>
 </head>
@@ -106,34 +176,133 @@
 <div class="bg-white rounded-xl shadow-md p-8" id="send-brief">
 <h2>Send Us Your Project Brief</h2>
 <p>
-  Use the form below to tell us about your project, upload files, and request a quote.
+  Use the form below to tell us about your project and request a quote.
   We typically respond within 24 hours.
 </p>
-<p class="form-intro">
-  We’ll only use your details to respond to this enquiry. File uploads may require Google sign-in.
-</p>
-<div class="contact-form-embed">
-  <iframe
-    src="https://docs.google.com/forms/d/e/1FAIpQLSceaOw6KJ0kQkoaJPylvEKEwxzIfTCnsGu23pFSbntByxRC2Q/viewform?embedded=true"
-    width="100%"
-    height="1300"
-    frameborder="0"
-    marginheight="0"
-    marginwidth="0">
-    Loading…
-  </iframe>
-</div>
-<div class="form-helper">
-<ul class="brief-checklist">
-  <li>Include dimensions and quantities</li>
-  <li>Upload STEP or STL files if available</li>
-  <li>Mention any deadlines or constraints</li>
-</ul>
-<p class="contact-fallback">
-  Having trouble with the form?
-  Email us at <strong>hello@ecoprintinnovations.co.uk</strong>
-</p>
-</div>
+<form action="https://api.web3forms.com/submit" class="quote-form" method="POST">
+  <input type="hidden" name="access_key" value="74b0cec7-4833-4938-8d11-5e8cc5fe18e7"/>
+  <input type="hidden" name="subject" value="New Quote Request - Eco Print Innovations"/>
+  <input type="hidden" name="redirect" value="https://ecoprintinnovations.co.uk/thank-you.html"/>
+
+  <fieldset>
+    <legend>Contact Details</legend>
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="first-name">First Name *</label>
+        <input id="first-name" name="first_name" type="text" required/>
+      </div>
+      <div class="form-group">
+        <label for="surname">Surname *</label>
+        <input id="surname" name="surname" type="text" required/>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input id="email" name="email" type="email" required/>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input id="phone" name="phone" type="tel"/>
+      </div>
+      <div class="form-group full">
+        <label for="contact-method">Preferred Contact Method *</label>
+        <select id="contact-method" name="preferred_contact_method" required>
+          <option value="" selected disabled>Select preferred contact method</option>
+          <option value="Email">Email</option>
+          <option value="Phone">Phone</option>
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="Either">Either</option>
+        </select>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Service Information</legend>
+    <div class="form-grid">
+      <div class="form-group full">
+        <label for="service">Service Interested In *</label>
+        <select id="service" name="service_interested_in" required>
+          <option value="" selected disabled>Select a service</option>
+          <option value="3D Printing">3D Printing</option>
+          <option value="Product Design">Product Design</option>
+          <option value="Prototyping">Prototyping</option>
+          <option value="Replacement Parts">Replacement Parts</option>
+          <option value="Custom Project">Custom Project</option>
+          <option value="Not Sure Yet">Not Sure Yet</option>
+        </select>
+      </div>
+    </div>
+    <div id="printing-details">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="material">Preferred Material</label>
+          <select id="material" name="preferred_material">
+            <option value="" selected>Select preferred material</option>
+            <option value="PLA">PLA</option>
+            <option value="PETG">PETG</option>
+            <option value="ABS">ABS</option>
+            <option value="TPU">TPU</option>
+            <option value="Not Sure">Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Approximate Quantity</label>
+          <select id="quantity" name="approximate_quantity">
+            <option value="" selected>Select quantity range</option>
+            <option value="1-5">1-5</option>
+            <option value="6-20">6-20</option>
+            <option value="21-50">21-50</option>
+            <option value="51+">51+</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="part-size">Approximate Part Size</label>
+          <select id="part-size" name="approximate_part_size">
+            <option value="" selected>Select part size</option>
+            <option value="Small (up to 10cm)">Small (up to 10cm)</option>
+            <option value="Medium (10-25cm)">Medium (10-25cm)</option>
+            <option value="Large (25cm+)">Large (25cm+)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Project Details</legend>
+    <div class="form-grid">
+      <div class="form-group full">
+        <label for="description">Project Description *</label>
+        <textarea id="description" name="project_description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="timeframe">Required Timeframe *</label>
+        <select id="timeframe" name="required_timeframe" required>
+          <option value="" selected disabled>Select required timeframe</option>
+          <option value="ASAP">ASAP</option>
+          <option value="1-2 weeks">1-2 weeks</option>
+          <option value="Flexible">Flexible</option>
+          <option value="Just exploring options">Just exploring options</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="referral">How did you hear about us?</label>
+        <select id="referral" name="how_did_you_hear_about_us">
+          <option value="" selected>Select an option</option>
+          <option value="Google Search">Google Search</option>
+          <option value="Social Media">Social Media</option>
+          <option value="Referral">Referral</option>
+          <option value="Repeat Customer">Repeat Customer</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="h-captcha" data-captcha="true"></div>
+  <button type="submit">Submit Quote Request</button>
+  <small class="gdpr-note">By submitting this request, you consent to Eco Print Innovations collecting your details to process your quote. Your data is securely routed via Web3Forms. We never sell your data. Read our full <a href="/privacy-policy.html" class="text-green-700 underline hover:text-green-800">Privacy Policy</a>.</small>
+</form>
 </div>
 </div>
 </div>
@@ -225,5 +394,20 @@
 -->
 <script src="/consent.js" data-ga-id="" data-pixel-id=""></script>
 <script src="assets/js/header.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const serviceSelect = document.getElementById('service');
+    const printingDetails = document.getElementById('printing-details');
+
+    function togglePrintingDetails() {
+      const selectedService = serviceSelect.value;
+      const shouldShow = selectedService === '3D Printing' || selectedService === 'Replacement Parts';
+      printingDetails.style.display = shouldShow ? 'block' : 'none';
+    }
+
+    serviceSelect.addEventListener('change', togglePrintingDetails);
+    togglePrintingDetails();
+  });
+</script>
 </body>
 </html>
