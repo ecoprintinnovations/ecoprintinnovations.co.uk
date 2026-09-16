@@ -1,42 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="site-base" content=""/>
-  <title>Thank You - Eco Print Innovations</title>
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link href="assets/css/site.css" rel="stylesheet"/>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
-  </style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Thanks for Your Brief | Eco Print Innovations</title>
+  <meta name="description" content="Thanks for submitting your project brief to Eco Print Innovations."/>
+  <link rel="canonical" href="https://ecoprintinnovations.co.uk/thankyou.html"/>
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <div id="site-header"></div>
-  <main class="flex items-center justify-center min-h-[calc(100vh-var(--header-height))] px-4 py-16">
-  <div class="text-center p-8 bg-white rounded-lg shadow-md">
-    <h1 class="text-2xl font-semibold mb-4">Thank you!</h1>
-    <p class="mb-6">Your message has been sent successfully. We'll be in touch soon.</p>
-    <p id="request-id" class="mb-6"></p>
-    <a href="index.html" class="text-green-600 hover:underline">Return to home page</a>
-  </div>
-  </main>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get('request_id');
-      if (id) {
-        const display = document.getElementById('request-id');
-        display.textContent = `Your reference number is ${id}.`;
-      }
-    });
-  </script>
-<script src="/consent.js" data-ga-id="" data-pixel-id=""></script>
-<script src="assets/js/header.js" defer></script>
-</body>
+<body><main class="section"><div class="container"><h1>Thank You</h1><p>Your request has been received. We will reply as soon as possible.</p><p><a class="btn" href="/index.html">Return home</a></p></div></main></body>
 </html>

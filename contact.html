@@ -1,397 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta name="site-base" content=""/>
-  <title>Contact Eco Print Innovations | Send your brief</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link href="assets/css/site.css" rel="stylesheet"/>
-  <script src="https://web3forms.com/client/script.js" async defer></script>
-  <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .quote-form {
-            margin-top: 1.5rem;
-            display: grid;
-            gap: 1.5rem;
-        }
-        .quote-form fieldset {
-            border: 1px solid #e5e7eb;
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-        }
-        .quote-form legend {
-            font-weight: 600;
-            color: #166534;
-            padding: 0 0.35rem;
-        }
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-            gap: 1rem;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-        }
-        .form-group label {
-            font-weight: 500;
-            color: #1f2937;
-            font-size: 0.95rem;
-        }
-        .quote-form input,
-        .quote-form select,
-        .quote-form textarea {
-            width: 100%;
-            border: 1px solid #d1d5db;
-            border-radius: 0.625rem;
-            padding: 0.7rem 0.8rem;
-            font-size: 0.95rem;
-            background: #ffffff;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        .quote-form input:focus,
-        .quote-form select:focus,
-        .quote-form textarea:focus {
-            outline: none;
-            border-color: #16a34a;
-            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
-        }
-        .quote-form textarea {
-            min-height: 8rem;
-            resize: vertical;
-        }
-        .quote-form button {
-            border: 0;
-            border-radius: 0.625rem;
-            padding: 0.85rem 1.25rem;
-            font-weight: 600;
-            color: #ffffff;
-            background-color: #16a34a;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-        .quote-form button:hover,
-        .quote-form button:focus-visible {
-            background-color: #15803d;
-        }
-        .gdpr-note {
-            color: #4b5563;
-            display: block;
-            line-height: 1.5;
-        }
-        #send-brief {
-            scroll-margin-top: 90px;
-        }
-        #printing-details {
-            display: none;
-        }
-        @media (min-width: 768px) {
-            .form-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-            .form-group.full {
-                grid-column: 1 / -1;
-            }
-        }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Contact Eco Print Innovations | Request a Quote</title>
+  <meta name="description" content="Send a photo, sketch, measurement, file or rough idea to Eco Print Innovations for practical 3D printing feasibility feedback and a clear quote."/>
+  <link rel="canonical" href="https://ecoprintinnovations.co.uk/contact.html"/>
+  <meta property="og:title" content="Request a 3D Printing Quote | Eco Print Innovations"/>
+  <meta property="og:description" content="Send your part, prototype or small-batch brief for practical feasibility guidance and a clear quote."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ecoprintinnovations.co.uk/contact.html"/>
+  <meta name="twitter:card" content="summary"/>
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
 </head>
-<body class="bg-gray-50 text-gray-800">
-<div id="site-header"></div>
-<section class="py-16 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-<p class="text-lg text-gray-600 max-w-2xl mx-auto">Send your B2B brief, files, and requirements to receive options, lead time, and a clear quote.</p>
-</div>
-<div class="flex flex-col md:flex-row">
-<div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-<div class="bg-white rounded-xl shadow-md p-8 h-full">
-<h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-<div class="space-y-6">
-<div class="flex items-start">
-<div class="bg-green-100 p-3 rounded-full mr-4">
-<i class="fas fa-map-marker-alt text-green-600"></i>
-</div>
-<div>
-<h4 class="font-semibold">Our Location</h4>
-<p class="text-gray-600">Frodsham, England</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="bg-green-100 p-3 rounded-full mr-4">
-<i class="fas fa-envelope text-green-600"></i>
-</div>
-<div>
-<h4 class="font-semibold">Contact Us</h4>
-<p class="text-gray-600">Please use the brief form for any enquiries.</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="bg-green-100 p-3 rounded-full mr-4">
-<i class="fas fa-clock text-green-600"></i>
-</div>
-<div>
-<h4 class="font-semibold">Working Hours</h4>
-<p class="text-gray-600">Monday - Friday: 9AM - 6PM</p>
-<p class="text-gray-600">Saturday: 10AM - 4PM</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="bg-green-100 p-3 rounded-full mr-4">
-<i class="fas fa-envelope text-green-600"></i>
-</div>
-<div>
-<h4 class="font-semibold">Need Assistance?</h4>
-<p class="text-gray-600">Use the contact form or submit a support ticket for help.</p>
-</div>
-</div>
-</div>
-<div class="mt-8">
-<h4 class="font-semibold mb-4">Follow Us</h4>
-<div class="flex space-x-4">
-<a class="bg-gray-100 p-3 rounded-full hover:bg-green-100 transition" href="https://www.facebook.com/people/Eco-Print-Innovations/61564838544965/" target="_blank" rel="noopener noreferrer">
-<i class="fab fa-facebook-f text-gray-600 hover:text-green-600"></i>
-</a>
-<a class="bg-gray-100 p-3 rounded-full hover:bg-green-100 transition" href="https://x.com/ecoprintinnovat" target="_blank" rel="noopener noreferrer">
-<i class="fab fa-twitter text-gray-600 hover:text-green-600"></i>
-</a>
-<a class="bg-gray-100 p-3 rounded-full hover:bg-green-100 transition" href="https://www.instagram.com/ecoprintinnovations/" target="_blank" rel="noopener noreferrer">
-<i class="fab fa-instagram text-gray-600 hover:text-green-600"></i>
-</a>
-<a class="bg-gray-100 p-3 rounded-full hover:bg-green-100 transition" href="https://www.linkedin.com/company/eco-print-innovations/" target="_blank" rel="noopener noreferrer">
-<i class="fab fa-linkedin-in text-gray-600 hover:text-green-600"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-<div class="md:w-1/2">
-<div class="bg-white rounded-xl shadow-md p-8" id="send-brief">
-<h2>Send Us Your Project Brief</h2>
-<p>
-  Use the form below to tell us about your project and request a quote.
-  We typically respond within 24 hours.
-</p>
-<form action="https://api.web3forms.com/submit" class="quote-form" method="POST">
-  <input type="hidden" name="access_key" value="74b0cec7-4833-4938-8d11-5e8cc5fe18e7"/>
-  <input type="hidden" name="subject" value="New Quote Request - Eco Print Innovations"/>
-  <input type="hidden" name="redirect" value="https://ecoprintinnovations.co.uk/thank-you.html"/>
-
-  <fieldset>
-    <legend>Contact Details</legend>
-    <div class="form-grid">
-      <div class="form-group">
-        <label for="first-name">First Name *</label>
-        <input id="first-name" name="first_name" type="text" required/>
-      </div>
-      <div class="form-group">
-        <label for="surname">Surname *</label>
-        <input id="surname" name="surname" type="text" required/>
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address *</label>
-        <input id="email" name="email" type="email" required/>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input id="phone" name="phone" type="tel"/>
-      </div>
-      <div class="form-group full">
-        <label for="contact-method">Preferred Contact Method *</label>
-        <select id="contact-method" name="preferred_contact_method" required>
-          <option value="" selected disabled>Select preferred contact method</option>
-          <option value="Email">Email</option>
-          <option value="Phone">Phone</option>
-          <option value="WhatsApp">WhatsApp</option>
-          <option value="Either">Either</option>
-        </select>
-      </div>
+<body class="future-shell">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header" data-site-header>
+    <div class="container nav-wrap">
+      <a class="logo" href="/index.html"><img src="/images/logo.svg" alt="Eco Print Innovations logo"/><span>Eco Print Innovations<small>Send the problem</small></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+      <nav id="site-nav" class="nav-links" data-nav aria-label="Primary">
+        <a href="/index.html">Home</a>
+        <a href="/index.html#services">Services</a>
+        <a href="/b2b-solutions.html">B2B</a>
+        <a href="#send-brief">Quote Form</a>
+        <a class="btn btn-primary" href="#send-brief">Get a feasibility review</a>
+      </nav>
     </div>
-  </fieldset>
+  </header>
 
-  <fieldset>
-    <legend>Service Information</legend>
-    <div class="form-grid">
-      <div class="form-group full">
-        <label for="service">Service Interested In *</label>
-        <select id="service" name="service_interested_in" required>
-          <option value="" selected disabled>Select a service</option>
-          <option value="3D Printing">3D Printing</option>
-          <option value="Product Design">Product Design</option>
-          <option value="Prototyping">Prototyping</option>
-          <option value="Replacement Parts">Replacement Parts</option>
-          <option value="Custom Project">Custom Project</option>
-          <option value="Not Sure Yet">Not Sure Yet</option>
-        </select>
-      </div>
-    </div>
-    <div id="printing-details">
-      <div class="form-grid">
-        <div class="form-group">
-          <label for="material">Preferred Material</label>
-          <select id="material" name="preferred_material">
-            <option value="" selected>Select preferred material</option>
-            <option value="PLA">PLA</option>
-            <option value="PETG">PETG</option>
-            <option value="ABS">ABS</option>
-            <option value="TPU">TPU</option>
-            <option value="Not Sure">Not Sure</option>
-          </select>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div data-reveal>
+          <span class="kicker">Feasibility review</span>
+          <h1>Send the technical brief.</h1>
+          <p>Share CAD files, dimensions, quantity, operating conditions and deadline. We will respond with material guidance, feasibility points and a scoped quote.</p>
+          <div class="headline-sequence"><span>Broken part?</span><span>Prototype idea?</span><span>Custom tool or fixture?</span></div>
         </div>
-        <div class="form-group">
-          <label for="quantity">Approximate Quantity</label>
-          <select id="quantity" name="approximate_quantity">
-            <option value="" selected>Select quantity range</option>
-            <option value="1-5">1-5</option>
-            <option value="6-20">6-20</option>
-            <option value="21-50">21-50</option>
-            <option value="51+">51+</option>
+        <aside class="page-orbital-card" data-reveal>
+          <strong>Useful details to include</strong>
+          <span>Photos, files, rough dimensions, quantity, material needs, deadline and what the part must survive.</span>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container form-shell">
+        <form id="send-brief" action="https://api.web3forms.com/submit" method="POST" data-reveal>
+          <input type="hidden" name="access_key" value="74b0cec7-4833-4938-8d11-5e8cc5fe18e7"/>
+          <input type="hidden" name="redirect" value="https://ecoprintinnovations.co.uk/thankyou.html"/>
+          <input type="hidden" name="subject" value="New Eco Print Innovations quote request"/>
+          <input class="honeypot" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+          <div class="form-heading"><span class="kicker">Project brief</span><h2>Tell us what needs to work.</h2></div>
+          <p class="form-note">Fields marked * are required. We use these details only to assess your enquiry and respond.</p>
+          <div class="form-grid">
+            <div><label for="first-name">First name *</label><input id="first-name" name="first_name" autocomplete="given-name" required/></div>
+            <div><label for="surname">Surname *</label><input id="surname" name="surname" autocomplete="family-name" required/></div>
+            <div><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required/></div>
+            <div><label for="phone">Telephone</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"/></div>
+            <div><label for="company">Company or organisation</label><input id="company" name="company" autocomplete="organization"/></div>
+            <div><label for="quantity">Approximate quantity</label><input id="quantity" name="quantity" inputmode="numeric" placeholder="e.g. 1, 20 or 100"/></div>
+          </div>
+          <label for="service">What do you need? *</label>
+          <select id="service" name="service" required>
+            <option value="" selected disabled>Select service</option>
+            <option>Replacement or missing part</option>
+            <option>Rapid prototyping</option>
+            <option>Custom bracket, holder or fixture</option>
+            <option>Small-batch production</option>
+            <option>B2B product development support</option>
           </select>
-        </div>
-        <div class="form-group full">
-          <label for="part-size">Approximate Part Size</label>
-          <select id="part-size" name="approximate_part_size">
-            <option value="" selected>Select part size</option>
-            <option value="Small (up to 10cm)">Small (up to 10cm)</option>
-            <option value="Medium (10-25cm)">Medium (10-25cm)</option>
-            <option value="Large (25cm+)">Large (25cm+)</option>
-          </select>
-        </div>
+          <label for="description">Project description *</label>
+          <textarea id="description" name="description" required placeholder="Tell us what the part needs to do, what problem it solves, any dimensions, quantity, deadline and whether you have a file, photo or sample."></textarea>
+          <div class="form-grid">
+            <div><label for="dimensions">Approximate dimensions</label><input id="dimensions" name="dimensions" placeholder="e.g. 80 × 40 × 20 mm"/></div>
+            <div><label for="deadline">Required date or timeframe</label><input id="deadline" name="deadline" placeholder="e.g. within 2 weeks"/></div>
+          </div>
+          <label for="file-link">Link to files, drawings or photographs</label>
+          <input id="file-link" name="file_link" type="url" inputmode="url" placeholder="Google Drive, OneDrive, Dropbox or similar"/>
+          <p class="form-note">STEP or STL files are useful where available. A photo, sketch or measured sample is also enough to start. Please set shared links so we can view them.</p>
+          <label class="consent" for="consent"><input id="consent" name="consent" type="checkbox" value="Agreed" required/> <span>I agree that Eco Print Innovations may use these details to assess and respond to my enquiry. *</span></label>
+          <p><button class="btn btn-primary" type="submit" data-submit-label="Submit feasibility request">Submit feasibility request</button></p>
+          <p class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
+          <p class="form-note">By submitting, you agree to our <a href="/privacy-policy.html">privacy policy</a>.</p>
+        </form>
       </div>
-    </div>
-  </fieldset>
+    </section>
+  </main>
 
-  <fieldset>
-    <legend>Project Details</legend>
-    <div class="form-grid">
-      <div class="form-group full">
-        <label for="description">Project Description *</label>
-        <textarea id="description" name="project_description" required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="timeframe">Required Timeframe *</label>
-        <select id="timeframe" name="required_timeframe" required>
-          <option value="" selected disabled>Select required timeframe</option>
-          <option value="ASAP">ASAP</option>
-          <option value="1-2 weeks">1-2 weeks</option>
-          <option value="Flexible">Flexible</option>
-          <option value="Just exploring options">Just exploring options</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="referral">How did you hear about us?</label>
-        <select id="referral" name="how_did_you_hear_about_us">
-          <option value="" selected>Select an option</option>
-          <option value="Google Search">Google Search</option>
-          <option value="Social Media">Social Media</option>
-          <option value="Referral">Referral</option>
-          <option value="Repeat Customer">Repeat Customer</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-    </div>
-  </fieldset>
-
-  <div class="h-captcha" data-captcha="true"></div>
-  <button type="submit">Submit Quote Request</button>
-  <small class="gdpr-note">By submitting this request, you consent to Eco Print Innovations collecting your details to process your quote. Your data is securely routed via Web3Forms. We never sell your data. Read our full <a href="/privacy-policy.html" class="text-green-700 underline hover:text-green-800">Privacy Policy</a>.</small>
-</form>
-</div>
-</div>
-</div>
-</div>
-</section>
-<footer class="bg-gray-800 text-white py-12">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-<div>
-<div class="mb-4">
-<span class="text-lg font-bold">Eco Print Innovations</span>
-</div>
-<p class="text-gray-400 mb-4">B2B 3D printing solutions with sustainable materials and practical support.</p>
-<div class="flex space-x-4">
-<a class="text-gray-400 hover:text-white transition" href="https://www.facebook.com/people/Eco-Print-Innovations/61564838544965/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-<a class="text-gray-400 hover:text-white transition" href="https://x.com/ecoprintinnovat" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i></a>
-<a class="text-gray-400 hover:text-white transition" href="https://www.instagram.com/ecoprintinnovations/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-<a class="text-gray-400 hover:text-white transition" href="https://www.linkedin.com/company/eco-print-innovations/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-</div>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-<ul class="space-y-2">
-<li><a class="text-gray-400 hover:text-white transition" href="/#home">Home</a></li>
-<li><a class="text-gray-400 hover:text-white transition" href="/b2b-solutions.html">B2B Solutions</a></li>
-<li><a class="text-gray-400 hover:text-white transition" href="/#how-it-works">How it works</a></li>
-<li><a class="text-gray-400 hover:text-white transition" href="/#materials">Materials</a></li>
-<li><a class="text-gray-400 hover:text-white transition" href="/#about">About Us</a></li>
-<li><a class="text-gray-400 hover:text-white transition" href="/#contact">Contact</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Services</h4>
-<ul class="space-y-2">
-<li><a class="text-gray-400 hover:text-white transition" href="/#services">3D Printing</a></li>
-<li><a class="text-gray-400 hover:text-white transition" href="/#services">3D Design</a></li>
-<li><a class="text-gray-400 hover:text-white transition" href="/#services">Prototyping</a></li>
-<li><a class="text-gray-400 hover:text-white transition" href="/#services">Repairs</a></li>
-<li><a class="text-gray-400 hover:text-white transition" href="/#services">Training</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Newsletter</h4>
-<p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
-<form class="flex">
-<input class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full" placeholder="Your email" type="email"/>
-<button class="bg-green-600 px-4 py-2 rounded-r-lg hover:bg-green-700 transition" type="submit">
-<i class="fas fa-paper-plane"></i>
-</button>
-</form>
-</div>
-</div>
-<div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-<p>Copyright <span data-year>2026</span> Eco Print Innovations. All rights reserved.</p>
-<p class="mt-2 leading-relaxed whitespace-normal break-normal" style="hyphens: none;">
-  Eco Print Innovations Ltd · Registered in England & Wales No. 15798980 · Registered Office: Beechcroft, Waterloo Lane, Frodsham, England, WA6 6JN
-</p>
-<nav class="mt-2 flex justify-center space-x-4">
-<a class="hover:text-white transition" href="/#about">About</a>
-<a class="hover:text-white transition" href="/b2b-solutions.html">B2B Solutions</a>
-<a class="hover:text-white transition" href="/#materials">Materials</a>
-<a class="hover:text-white transition" href="/#contact">Contact</a>
-</nav>
-<div class="mt-2 flex justify-center space-x-4">
-<a class="hover:text-white transition" href="/privacy-policy.html">Privacy Policy</a>
-    <a class="hover:text-white transition" href="/refund-and-returns-policy.html">Refund & Returns Policy</a>
-    <a class="hover:text-white transition" href="/shipping-policy.html">Shipping Policy</a>
-<a class="hover:text-white transition" href="#">Terms of Service</a>
-<a class="hover:text-white transition" href="#">Sustainability Policy</a>
-</div>
-</div>
-</div>
-</footer>
-<script src="/consent.js" data-ga-id="" data-pixel-id=""></script>
-<script src="assets/js/header.js" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const serviceSelect = document.getElementById('service');
-    const printingDetails = document.getElementById('printing-details');
-
-    function togglePrintingDetails() {
-      const selectedService = serviceSelect.value;
-      const shouldShow = selectedService === '3D Printing' || selectedService === 'Replacement Parts';
-      printingDetails.style.display = shouldShow ? 'block' : 'none';
-    }
-
-    serviceSelect.addEventListener('change', togglePrintingDetails);
-    togglePrintingDetails();
-  });
-</script>
+  <footer class="site-footer"><div class="container footer-wrap"><section><h2>Contact</h2><p>Frodsham, England<br/>Email via form above</p></section><section><h2>Follow</h2><p><a href="https://www.facebook.com/people/Eco-Print-Innovations/61564838544965/" target="_blank" rel="noopener noreferrer">Facebook</a><br/><a href="https://x.com/ecoprintinnovat" target="_blank" rel="noopener noreferrer">X</a><br/><a href="https://www.instagram.com/ecoprintinnovations/" target="_blank" rel="noopener noreferrer">Instagram</a><br/><a href="https://www.linkedin.com/company/eco-print-innovations/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p></section><section><h2>Policies</h2><p><a href="/privacy-policy.html">Privacy Policy</a><br/><a href="/refund-and-returns-policy.html">Refund and Returns Policy</a><br/><a href="/shipping-policy.html">Shipping Policy</a><br/><a href="/terms-of-service.html">Terms of Service</a><br/><a href="/sustainability-policy.html">Sustainability Policy</a></p></section></div><div class="container legal"><p>Copyright <span data-year>2026</span> Eco Print Innovations Ltd.</p></div></footer>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

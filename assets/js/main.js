@@ -72,4 +72,44 @@
       el.classList.add('visible');
     });
   }
+
+  document.querySelectorAll('form[action*="web3forms.com/submit"]').forEach(function (form) {
+    var submitButton = form.querySelector('button[type="submit"]');
+    var status = form.querySelector('[data-form-status]');
+    if (!submitButton || !status || !window.fetch) return;
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      var defaultLabel = submitButton.getAttribute('data-submit-label') || submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+      status.className = 'form-status is-visible';
+      status.textContent = 'Sending your feasibility request...';
+
+      try {
+        var response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        var result = await response.json().catch(function () { return {}; });
+        if (!response.ok || result.success === false) {
+          throw new Error(result.message || 'The form service did not accept the request.');
+        }
+
+        form.reset();
+        status.className = 'form-status is-visible is-success';
+        status.textContent = 'Thank you. Your feasibility request has been received. We will review the brief and respond by email.';
+      } catch (error) {
+        status.className = 'form-status is-visible is-error';
+        status.textContent = 'We could not send your request. Please check your connection and try again. Your entered details have been kept.';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = defaultLabel;
+        status.focus();
+      }
+    });
+  });
 })();

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://ecoprintinnovations.co.uk/</loc>
-  </url>
-  <url>
-    <loc>https://ecoprintinnovations.co.uk/thankyou.html</loc>
-  </url>
+  <url><loc>https://ecoprintinnovations.co.uk/</loc></url>
+  <url><loc>https://ecoprintinnovations.co.uk/b2b-solutions.html</loc></url>
+  <url><loc>https://ecoprintinnovations.co.uk/contact.html</loc></url>
+  <url><loc>https://ecoprintinnovations.co.uk/privacy-policy.html</loc></url>
+  <url><loc>https://ecoprintinnovations.co.uk/refund-and-returns-policy.html</loc></url>
+  <url><loc>https://ecoprintinnovations.co.uk/shipping-policy.html</loc></url>
+  <url><loc>https://ecoprintinnovations.co.uk/terms-of-service.html</loc></url>
+  <url><loc>https://ecoprintinnovations.co.uk/sustainability-policy.html</loc></url>
+  <url><loc>https://ecoprintinnovations.co.uk/thankyou.html</loc></url>
 </urlset>
