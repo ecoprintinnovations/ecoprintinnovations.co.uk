@@ -97,6 +97,11 @@ const setupMobileMenu = (container) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  const currentYear = String(new Date().getFullYear());
+  document.querySelectorAll('[data-year]').forEach((year) => {
+    year.textContent = currentYear;
+  });
+
   const placeholder = document.getElementById('site-header');
   if (!placeholder) {
     return;
