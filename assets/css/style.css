@@ -482,7 +482,7 @@ section[id] { scroll-margin-top: 96px; }
 .eco-stack span { color: var(--muted); }
 .case-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 .case-card h3 { margin: 0 0 10px; }
@@ -1371,8 +1371,8 @@ form label {
 
 /* Photographic industrial direction */
 .story-grid {
-  grid-template-columns: minmax(0, 1.04fr) minmax(390px, .76fr);
-  gap: clamp(44px, 6vw, 88px);
+  grid-template-columns: minmax(0, 1.04fr) minmax(460px, .9fr);
+  gap: clamp(40px, 5vw, 72px);
 }
 .story-copy h1,
 .section-intro h2,
@@ -1400,7 +1400,8 @@ form label {
 }
 .hero-media {
   position: relative;
-  min-height: 520px;
+  aspect-ratio: 3 / 2;
+  min-height: 0;
   margin: 0;
   overflow: hidden;
   border: 1px solid rgba(24,38,30,.18);
@@ -1419,7 +1420,7 @@ form label {
 .hero-media img {
   width: 100%;
   height: 100%;
-  min-height: 520px;
+  min-height: 0;
   object-fit: cover;
   object-position: center;
 }
@@ -1448,8 +1449,8 @@ form label {
 }
 .development-proof {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(260px, .6fr);
-  min-height: 410px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: 0;
   margin: 42px 0 28px;
   overflow: hidden;
   border-radius: 6px;
@@ -1459,7 +1460,7 @@ form label {
 .development-proof img {
   width: 100%;
   height: 100%;
-  min-height: 410px;
+  min-height: 0;
   object-fit: cover;
 }
 .development-proof figcaption {
@@ -1491,7 +1492,8 @@ form label {
 }
 .material-gallery img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
+  aspect-ratio: 1;
   object-fit: cover;
 }
 .material-gallery figcaption {
@@ -1512,7 +1514,7 @@ form label {
 }
 .technical-case figure {
   margin: -28px -28px 24px;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-bottom: 1px solid rgba(45,86,61,.14);
 }
@@ -1561,7 +1563,7 @@ form label {
 @media (max-width: 980px) {
   .hero-grid, .story-grid, .page-hero-grid, .workflow-shell, .brief-panel, .story-split, .story-split.reverse { grid-template-columns: 1fr; }
   .hero-media,
-  .hero-media img { min-height: 460px; }
+  .hero-media img { min-height: 0; }
   .machine-stage { min-height: 470px; }
   .problem-grid, .impact-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .capability-grid, .material-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1603,7 +1605,7 @@ form label {
   .nav-wrap { min-height: 78px; }
   .logo.logo-brand img { width: 64px; height: 64px; }
   .hero-media,
-  .hero-media img { min-height: 360px; }
+  .hero-media img { min-height: 0; }
   .hero-media img {
     object-position: center 42%;
   }
