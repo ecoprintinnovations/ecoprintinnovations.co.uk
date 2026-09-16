@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title">
+<title id="title">Protective transit cap illustration</title>
+<rect width="640" height="420" rx="24" fill="#ecfbf3"/>
+<g transform="translate(120 58)">
+  <rect width="400" height="300" rx="30" fill="#1a3e33"/>
+  <path d="M68 250C68 170 124 126 202 126s134 44 134 124v44H68z" fill="#8ce6b7"/>
+  <path d="M82 250h240v30H82z" fill="#d8fff0"/>
+  <circle cx="202" cy="102" r="28" fill="#bff7db"/>
+</g>
+</svg>
