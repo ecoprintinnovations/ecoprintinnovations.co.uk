@@ -29,19 +29,6 @@
   syncHeader();
   window.addEventListener('scroll', syncHeader, { passive: true });
 
-  var storyStage = document.querySelector('[data-story-stage]');
-  function syncStoryProgress() {
-    if (!storyStage) return;
-    var rect = storyStage.getBoundingClientRect();
-    var travel = Math.max(window.innerHeight * 0.82, 1);
-    var raw = Math.min(Math.max((0 - rect.top) / travel, 0), 1);
-    storyStage.style.setProperty('--story-progress', raw.toFixed(3));
-  }
-
-  syncStoryProgress();
-  window.addEventListener('scroll', syncStoryProgress, { passive: true });
-  window.addEventListener('resize', syncStoryProgress);
-
   var currentYear = String(new Date().getFullYear());
   document.querySelectorAll('[data-year]').forEach(function (year) {
     year.textContent = currentYear;
