@@ -22,9 +22,7 @@ const failedImageAlts = imageTags.filter(({ tag }) => {
   const altMatch = tag.match(/\balt=(["'])(.*?)\1/i);
   if (!altMatch) return true;
   const alt = altMatch[2].trim();
-  if (!alt) {
-    return !/class=["'][^"']*\btree-art\b|src=["'][^"']*hero-printer\.svg/i.test(tag);
-  }
+  if (!alt) return true;
   return genericAltText.has(alt.toLowerCase());
 });
 const yearIssues = Object.entries(htmlByFile).filter(([, source]) =>
@@ -97,8 +95,10 @@ const checks = [
   ["all HTML image assets use SVG WebP or AVIF", nonModernImages.length === 0],
   ["contact form has explicit success and error states", js.includes("is-success") && js.includes("is-error") && htmlByFile["contact.html"].includes("data-form-status")],
   ["homepage has futuristic shell", html.includes('class="future-shell"')],
-  ["homepage has apple inspiration scene", html.includes('class="apple-stage"')],
-  ["homepage uses improved tree illustration", html.includes("story-tree-engineering.svg")],
+  ["homepage uses professional engineering photography", ["workshop-printer.webp", "prototype-iterations.webp", "positioning-jig.webp", "printer-farm.webp"].every((asset) => html.includes(asset))],
+  ["homepage restores the established brand logo", html.includes("logo-brand.webp")],
+  ["homepage restores visual material examples", ["material-pla.webp", "material-pet.webp", "material-wood.webp"].every((asset) => html.includes(asset))],
+  ["homepage no longer uses the apple or tree metaphor", !html.includes('class="apple-stage"') && !html.includes("story-tree-engineering.svg")],
   ["homepage has B2B application development and impact pillars", html.includes('id="applications"') && html.includes('id="development"') && html.includes('id="impact"')],
   ["homepage has mini case studies", html.includes('id="case-studies"')],
   ["homepage has B2B story section", html.includes('id="b2b"')],
@@ -107,10 +107,9 @@ const checks = [
   ["homepage has delivery workflow", html.includes('id="workflow"')],
   ["homepage has final conversion flow", html.includes('id="brief"')],
   ["stylesheet defines future color tokens", css.includes("--void") && css.includes("--plasma")],
-  ["stylesheet defines apple story motion", css.includes(".falling-apple") && css.includes("--story-progress")],
+  ["stylesheet defines the photographic hero", css.includes(".hero-media") && css.includes(".development-proof")],
   ["stylesheet supports reduced motion", css.includes("@media (prefers-reduced-motion: reduce)")],
   ["script handles scrolled header state", js.includes("is-scrolled")],
-  ["script updates story progress", js.includes("data-story-stage") && js.includes("--story-progress")],
   ["script staggers reveal children", js.includes("data-stagger")],
 ];
 
