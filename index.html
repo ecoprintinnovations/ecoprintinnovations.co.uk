@@ -18,38 +18,53 @@
   <link rel="icon" href="/images/logo.svg" type="image/svg+xml"/>
   <link rel="stylesheet" href="/assets/css/style.css"/>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness"],
-  "name": "Eco Print Innovations",
-  "url": "https://ecoprintinnovations.co.uk/",
-  "logo": "https://ecoprintinnovations.co.uk/images/eco-print-innovations-logo-v1.png",
-  "sameAs": [
-    "https://www.facebook.com/people/Eco-Print-Innovations/61564838544965/",
-    "https://x.com/ecoprintinnovat",
-    "https://www.instagram.com/ecoprintinnovations/",
-    "https://www.linkedin.com/company/eco-print-innovations/"
-  ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Frodsham",
-      "addressRegion": "Cheshire",
-      "postalCode": "WA6",
-      "addressCountry": "GB"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "info@ecoprintinnovations.co.uk",
-      "availableLanguage": "English",
-      "areaServed": "GB"
-    },
-  "areaServed": {
-    "@type": "Country",
-    "name": "United Kingdom"
-  }
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://ecoprintinnovations.co.uk/#organization",
+          "name": "Eco Print Innovations Ltd",
+          "url": "https://ecoprintinnovations.co.uk/",
+          "logo": "https://ecoprintinnovations.co.uk/images/logo.svg",
+          "sameAs": [
+            "https://www.facebook.com/people/Eco-Print-Innovations/61564838544965/",
+            "https://x.com/ecoprintinnovat",
+            "https://www.instagram.com/ecoprintinnovations/",
+            "https://www.linkedin.com/company/eco-print-innovations/"
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://ecoprintinnovations.co.uk/#business",
+          "name": "Eco Print Innovations",
+          "url": "https://ecoprintinnovations.co.uk/",
+          "parentOrganization": { "@id": "https://ecoprintinnovations.co.uk/#organization" },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Frodsham",
+            "addressRegion": "Cheshire",
+            "addressCountry": "GB"
+          },
+          "areaServed": { "@type": "Country", "name": "United Kingdom" }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://ecoprintinnovations.co.uk/#service",
+          "name": "B2B 3D printing and additive manufacturing support",
+          "provider": { "@id": "https://ecoprintinnovations.co.uk/#business" },
+          "areaServed": { "@type": "Country", "name": "United Kingdom" },
+          "serviceType": [
+            "Rapid prototyping",
+            "Jigs and fixtures",
+            "Replacement parts",
+            "Tooling aids",
+            "Small-batch production"
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body class="future-shell">
   <a href="#main" class="skip-link">Skip to content</a>
@@ -63,6 +78,8 @@
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
       <nav id="site-nav" class="nav-links" data-nav aria-label="Primary">
         <a href="#applications">Applications</a>
+        <a href="#materials">Materials</a>
+        <a href="#case-studies">Case Studies</a>
         <a href="#services">Services</a>
         <a href="/b2b-solutions.html">B2B</a>
         <a class="btn btn-primary" href="/contact.html#send-brief">Get a feasibility review</a>
@@ -178,6 +195,26 @@
       </div>
     </section>
 
+    <section class="section" id="case-studies" aria-labelledby="case-title">
+      <div class="container">
+        <div class="section-intro" data-reveal>
+          <span class="kicker">Technical case studies</span>
+          <h2 id="case-title">Representative engineering briefs, documented consistently.</h2>
+          <p>These anonymised scenarios demonstrate the reusable case-study format. They illustrate capability and do not claim measured customer outcomes.</p>
+        </div>
+        <div class="case-grid" data-stagger>
+          <article class="case-card technical-case" data-reveal>
+            <span>Case 01 / Maintenance</span><h3>Discontinued equipment fitting</h3>
+            <dl><div><dt>Client industry</dt><dd>Industrial maintenance</dd></div><div><dt>The problem</dt><dd>A non-safety-critical fitting was unavailable as a standalone spare.</dd></div><div><dt>The solution</dt><dd>Recreate the interface from dimensions, then validate fit with a functional prototype.</dd></div><div><dt>Material used</dt><dd>PETG, subject to operating-condition review.</dd></div><div><dt>Final result</dt><dd>A repeatable replacement-part route ready for fit validation.</dd></div></dl>
+          </article>
+          <article class="case-card technical-case" data-reveal>
+            <span>Case 02 / Assembly</span><h3>Positioning jig for repeat work</h3>
+            <dl><div><dt>Client industry</dt><dd>Light manufacturing</dd></div><div><dt>The problem</dt><dd>Manual positioning introduced avoidable variation during a repeated task.</dd></div><div><dt>The solution</dt><dd>Develop a task-specific locating jig around the component and operator workflow.</dd></div><div><dt>Material used</dt><dd>PETG, with geometry selected for the expected handling load.</dd></div><div><dt>Final result</dt><dd>A prototype tooling aid ready for controlled production trials.</dd></div></dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section capability-section" id="services" aria-labelledby="services-title">
       <div class="container">
         <div class="section-intro narrow" data-reveal>
@@ -191,6 +228,29 @@
           <article class="capability-card" data-reveal><span>04 / Support</span><h3>Tooling Aids</h3><p>Guards, holders, guides and ergonomic aids for workshop and production use.</p></article>
           <article class="capability-card" data-reveal><span>05 / Produce</span><h3>Small-Batch Production</h3><p>Controlled short runs where additive manufacturing suits the geometry, quantity and tolerance.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section class="section material-section" id="materials" aria-labelledby="materials-title">
+      <div class="container">
+        <div class="section-intro" data-reveal>
+          <span class="kicker">Material comparison</span>
+          <h2 id="materials-title">Select material against the operating requirement.</h2>
+          <p>These relative ratings support an initial discussion; final selection depends on geometry, load, temperature, exposure, tolerances and validation requirements.</p>
+        </div>
+        <div class="material-table-wrap" data-reveal>
+          <table class="material-table">
+            <caption>Indicative comparison of commonly available FDM materials</caption>
+            <thead><tr><th scope="col">Material</th><th scope="col">Strength</th><th scope="col">Flexibility</th><th scope="col">Heat resistance</th><th scope="col">Sustainability context</th><th scope="col">Typical B2B use case</th></tr></thead>
+            <tbody>
+              <tr><th scope="row" data-label="Material">PLA</th><td data-label="Strength">Medium</td><td data-label="Flexibility">Low</td><td data-label="Heat resistance">Low</td><td data-label="Sustainability context">Bio-based feedstock; disposal route and additives affect end-of-life options.</td><td data-label="Typical B2B use case">Visual models, fit checks and low-temperature prototypes.</td></tr>
+              <tr><th scope="row" data-label="Material">PETG</th><td data-label="Strength">Medium-high</td><td data-label="Flexibility">Medium</td><td data-label="Heat resistance">Medium</td><td data-label="Sustainability context">Durable and potentially recyclable where suitable specialist routes exist.</td><td data-label="Typical B2B use case">Functional prototypes, brackets, guards and workshop aids.</td></tr>
+              <tr><th scope="row" data-label="Material">ASA</th><td data-label="Strength">High</td><td data-label="Flexibility">Low-medium</td><td data-label="Heat resistance">High</td><td data-label="Sustainability context">Long service life can reduce replacement frequency; specialist recycling required.</td><td data-label="Typical B2B use case">Outdoor housings, fixtures and UV-exposed components.</td></tr>
+              <tr><th scope="row" data-label="Material">TPU</th><td data-label="Strength">Application-specific</td><td data-label="Flexibility">Very high</td><td data-label="Heat resistance">Medium</td><td data-label="Sustainability context">Durability supports longer service life; recycling options are limited.</td><td data-label="Typical B2B use case">Protective feet, flexible guards, seals and impact buffers.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="material-note">Material availability and suitability are confirmed during feasibility review. Ratings are comparative, not certified engineering values.</p>
       </div>
     </section>
 
@@ -222,6 +282,18 @@
         <div class="brief-actions">
           <a class="btn btn-primary" href="/contact.html#send-brief">Get a feasibility review</a>
           <a class="btn btn-ghost" href="/b2b-solutions.html">View B2B page</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <div class="section-intro"><span class="kicker">B2B FAQ</span><h2 id="faq-title">Technical and commercial points to establish early.</h2><p>Use these answers to prepare a useful brief. Project-specific requirements are confirmed during feasibility review.</p></div>
+        <div class="faq-list">
+          <details><summary>Which file formats do you accept?</summary><p>STEP is preferred where editable solid geometry matters; STL is accepted for print-ready mesh geometry. We can also begin with dimensioned drawings, photographs or a physical sample.</p></details>
+          <details><summary>What are the typical lead times and delivery options?</summary><p>Lead time depends on design input, validation, part size, material and quantity. Send the required delivery date with the brief; we will confirm a realistic production and UK delivery schedule before work starts.</p></details>
+          <details><summary>Can you produce safety-critical parts?</summary><p>Our standard service is for prototypes, tooling aids and non-safety-critical parts. We will decline or redirect work where certification, regulated materials, traceability or safety validation falls outside the agreed capability.</p></details>
+          <details><summary>Can you work under an NDA?</summary><p>Yes. We can review a mutual or client-supplied NDA before detailed CAD data is shared. Mark confidentiality requirements in the initial enquiry so the handling route is agreed first.</p></details>
         </div>
       </div>
     </section>
