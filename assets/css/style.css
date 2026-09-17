@@ -1523,6 +1523,28 @@ form label {
   height: 100%;
   object-fit: cover;
 }
+.story-hero .story-copy h1 { font-size: 3.25rem; line-height: 1.08; }
+.story-hero .hero-media { aspect-ratio: auto; background: #f2f4f0; }
+.story-hero .hero-media img { height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
+.story-hero .hero-media figcaption { position: static; background: #213d2d; }
+.story-hero .hero-media::before { display: none; }
+.hero-media small { font-size: .75rem; color: #d2e1d6; }
+.problem-card > img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: #eef1ec; margin-bottom: 20px; border-radius: 4px; }
+.application-next { margin-top: 28px; }
+.application-next p { color: var(--muted); font-size: .875rem; }
+@media (max-width: 760px) {
+  .story-hero .story-copy h1 { font-size: 2.25rem; }
+}
+.repair-intro { background: #edf1ec; }
+.repair-intro h2 { max-width: 24ch; font-size: 2.25rem; line-height: 1.15; letter-spacing: 0; margin: 20px 0; }
+.repair-intro p { max-width: 68ch; color: var(--muted); }
+.repair-intro .btn { margin-top: 12px; white-space: normal; text-align: center; }
+.example-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.example-grid .problem-card > img { aspect-ratio: 3 / 2; }
+.page-photo-card > img { height: auto; min-height: 0; aspect-ratio: 3 / 2; object-fit: contain; }
+@media (max-width: 760px) {
+  .example-grid { grid-template-columns: 1fr; }
+}
 .project-gallery-section {
   background: #edf1ec;
 }
