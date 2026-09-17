@@ -1535,6 +1535,10 @@ form label {
 @media (max-width: 760px) {
   .story-hero .story-copy h1 { font-size: 2.25rem; }
 }
+.repair-intro { background: #edf1ec; }
+.repair-intro h2 { max-width: 24ch; font-size: 2.25rem; line-height: 1.15; letter-spacing: 0; margin: 20px 0; }
+.repair-intro p { max-width: 68ch; color: var(--muted); }
+.repair-intro .btn { margin-top: 12px; white-space: normal; text-align: center; }
 .example-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .example-grid .problem-card > img { aspect-ratio: 3 / 2; }
 .page-photo-card > img { height: auto; min-height: 0; aspect-ratio: 3 / 2; object-fit: contain; }
