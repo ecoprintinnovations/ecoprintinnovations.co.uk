@@ -1535,6 +1535,12 @@ form label {
 @media (max-width: 760px) {
   .story-hero .story-copy h1 { font-size: 2.25rem; }
 }
+.example-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.example-grid .problem-card > img { aspect-ratio: 3 / 2; }
+.page-photo-card > img { height: auto; min-height: 0; aspect-ratio: 3 / 2; object-fit: contain; }
+@media (max-width: 760px) {
+  .example-grid { grid-template-columns: 1fr; }
+}
 .project-gallery-section {
   background: #edf1ec;
 }
